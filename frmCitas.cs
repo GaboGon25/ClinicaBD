@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClinicaBD
 {
-    public partial class frmPacientes : Form
+    public partial class frmCitas : Form
     {
-        public frmPacientes()
+        public frmCitas()
         {
             InitializeComponent();
         }
