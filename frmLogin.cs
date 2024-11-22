@@ -27,7 +27,7 @@ namespace ClinicaBD
             Application.Exit();
         }
 
-        
+
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
@@ -37,7 +37,7 @@ namespace ClinicaBD
                 {
                     if (txtPassword.Text != "CONTRASEÑA")
                     {
-                        var validLogin = adminLogin.Login(txtUsername.Text,txtPassword.Text);
+                        var validLogin = adminLogin.Login(txtUsername.Text, txtPassword.Text);
                         if (validLogin == true)
                         {
                             //frm.ShowDialog();
@@ -86,6 +86,11 @@ namespace ClinicaBD
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
         }
     }
 }

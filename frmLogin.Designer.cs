@@ -98,10 +98,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Britannic Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(561, 57);
             label1.Name = "label1";
-            label1.Size = new Size(94, 30);
+            label1.Size = new Size(106, 31);
             label1.TabIndex = 3;
             label1.Text = "LOG IN";
             // 
@@ -210,6 +210,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmLogin";
             Text = "frmLogin";
+            Load += frmLogin_Load;
             frmletrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxImage).EndInit();
