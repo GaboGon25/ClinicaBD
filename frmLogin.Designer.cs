@@ -38,9 +38,11 @@
             pnlUsername = new Panel();
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
-            button1 = new Button();
+            btnAcceder = new Button();
             label2 = new Label();
             label3 = new Label();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
             frmletrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxImage).BeginInit();
@@ -51,7 +53,7 @@
             // 
             // frmletrero
             // 
-            frmletrero.BackColor = Color.Green;
+            frmletrero.BackColor = Color.FromArgb(124, 175, 32);
             frmletrero.Controls.Add(pbxClose);
             frmletrero.Dock = DockStyle.Top;
             frmletrero.Location = new Point(0, 0);
@@ -134,22 +136,23 @@
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(459, 248);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(39, 34);
+            pictureBox3.Size = new Size(40, 34);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
-            // button1
+            // btnAcceder
             // 
-            button1.BackColor = Color.MediumSeaGreen;
-            button1.Font = new Font("Bahnschrift Condensed", 20F);
-            button1.Location = new Point(492, 338);
-            button1.Name = "button1";
-            button1.Size = new Size(225, 58);
-            button1.TabIndex = 9;
-            button1.Text = "ACCEDER";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnAcceder.BackColor = Color.FromArgb(124, 175, 32);
+            btnAcceder.Font = new Font("Bahnschrift Condensed", 20F);
+            btnAcceder.ForeColor = SystemColors.ButtonHighlight;
+            btnAcceder.Location = new Point(492, 338);
+            btnAcceder.Name = "btnAcceder";
+            btnAcceder.Size = new Size(225, 58);
+            btnAcceder.TabIndex = 9;
+            btnAcceder.Text = "ACCEDER";
+            btnAcceder.UseVisualStyleBackColor = false;
+            btnAcceder.Click += btnAcceder_Click;
             // 
             // label2
             // 
@@ -170,7 +173,20 @@
             label3.Size = new Size(63, 15);
             label3.TabIndex = 11;
             label3.Text = "Password";
-            label3.Click += label3_Click;
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(504, 164);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(254, 23);
+            txtUsername.TabIndex = 12;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(505, 259);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(254, 23);
+            txtPassword.TabIndex = 13;
             // 
             // frmLogin
             // 
@@ -178,9 +194,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(811, 457);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button1);
+            Controls.Add(btnAcceder);
             Controls.Add(panel1);
             Controls.Add(pictureBox3);
             Controls.Add(pnlUsername);
@@ -192,7 +210,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmLogin";
             Text = "frmLogin";
-            Load += frmLogin_Load;
             frmletrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxImage).EndInit();
@@ -214,8 +231,10 @@
         private Panel pnlUsername;
         private Panel panel1;
         private PictureBox pictureBox3;
-        private Button button1;
+        private Button btnAcceder;
         private Label label2;
         private Label label3;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
     }
 }

@@ -56,7 +56,7 @@
             // 
             // pnlLetrero
             // 
-            pnlLetrero.BackColor = Color.LightSeaGreen;
+            pnlLetrero.BackColor = Color.FromArgb(124, 175, 32);
             pnlLetrero.Controls.Add(pbxOcultar);
             pnlLetrero.Controls.Add(pbxMinimizar);
             pnlLetrero.Controls.Add(pbxCerrar);
@@ -122,7 +122,7 @@
             // 
             // pnlSideBar
             // 
-            pnlSideBar.BackColor = Color.Teal;
+            pnlSideBar.BackColor = Color.ForestGreen;
             pnlSideBar.Controls.Add(panel4);
             pnlSideBar.Controls.Add(btnPagos);
             pnlSideBar.Controls.Add(panel3);
@@ -141,7 +141,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.LightSeaGreen;
+            panel4.BackColor = Color.FromArgb(124, 175, 32);
             panel4.Location = new Point(2, 482);
             panel4.Margin = new Padding(2, 1, 2, 1);
             panel4.Name = "panel4";
@@ -167,7 +167,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.LightSeaGreen;
+            panel3.BackColor = Color.FromArgb(124, 175, 32);
             panel3.Location = new Point(0, 381);
             panel3.Margin = new Padding(2, 1, 2, 1);
             panel3.Name = "panel3";
@@ -176,7 +176,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.LightSeaGreen;
+            panel2.BackColor = Color.FromArgb(124, 175, 32);
             panel2.Location = new Point(2, 272);
             panel2.Margin = new Padding(2, 1, 2, 1);
             panel2.Name = "panel2";
@@ -202,7 +202,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.LightSeaGreen;
+            panel1.BackColor = Color.FromArgb(124, 175, 32);
             panel1.Location = new Point(2, 177);
             panel1.Margin = new Padding(2, 1, 2, 1);
             panel1.Name = "panel1";

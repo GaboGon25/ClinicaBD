@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            textBox1 = new TextBox();
+            comboBox4 = new ComboBox();
             comboBox3 = new ComboBox();
             label6 = new Label();
             label4 = new Label();
@@ -40,8 +42,6 @@
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            comboBox4 = new ComboBox();
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -64,6 +64,21 @@
             groupBox1.TabIndex = 27;
             groupBox1.TabStop = false;
             groupBox1.Text = "DATOS PERSONALES";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(570, 150);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(236, 29);
+            textBox1.TabIndex = 30;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(151, 152);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(236, 29);
+            comboBox4.TabIndex = 29;
             // 
             // comboBox3
             // 
@@ -122,7 +137,7 @@
             // 
             // pnlTitulo
             // 
-            pnlTitulo.BackColor = Color.MediumTurquoise;
+            pnlTitulo.BackColor = Color.FromArgb(124, 175, 32);
             pnlTitulo.Controls.Add(label1);
             pnlTitulo.Location = new Point(285, 12);
             pnlTitulo.Name = "pnlTitulo";
@@ -133,6 +148,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 20F);
+            label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(22, 13);
             label1.Name = "label1";
             label1.Size = new Size(256, 32);
@@ -168,21 +184,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(1245, 290);
             dataGridView1.TabIndex = 23;
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(151, 152);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(236, 29);
-            comboBox4.TabIndex = 29;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(570, 150);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(236, 29);
-            textBox1.TabIndex = 30;
             // 
             // frmPagos
             // 

@@ -30,25 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOcupaciones));
             frmletrero = new Panel();
+            pbxCerrar = new PictureBox();
             pbxClose = new PictureBox();
             pnlTitulo = new Panel();
             label1 = new Label();
-            pbxCerrar = new PictureBox();
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
             label2 = new Label();
             button2 = new Button();
             button1 = new Button();
             frmletrero.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxClose).BeginInit();
             pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // frmletrero
             // 
-            frmletrero.BackColor = Color.Green;
+            frmletrero.BackColor = Color.FromArgb(124, 175, 32);
             frmletrero.Controls.Add(pbxCerrar);
             frmletrero.Controls.Add(pbxClose);
             frmletrero.Dock = DockStyle.Top;
@@ -56,6 +56,19 @@
             frmletrero.Name = "frmletrero";
             frmletrero.Size = new Size(795, 40);
             frmletrero.TabIndex = 1;
+            // 
+            // pbxCerrar
+            // 
+            pbxCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pbxCerrar.Cursor = Cursors.Hand;
+            pbxCerrar.Image = (Image)resources.GetObject("pbxCerrar.Image");
+            pbxCerrar.Location = new Point(752, 3);
+            pbxCerrar.Name = "pbxCerrar";
+            pbxCerrar.Size = new Size(40, 29);
+            pbxCerrar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxCerrar.TabIndex = 18;
+            pbxCerrar.TabStop = false;
+            pbxCerrar.Click += pbxCerrar_Click;
             // 
             // pbxClose
             // 
@@ -71,7 +84,7 @@
             // 
             // pnlTitulo
             // 
-            pnlTitulo.BackColor = Color.MediumTurquoise;
+            pnlTitulo.BackColor = Color.FromArgb(124, 175, 32);
             pnlTitulo.Controls.Add(label1);
             pnlTitulo.Location = new Point(12, 46);
             pnlTitulo.Name = "pnlTitulo";
@@ -82,24 +95,12 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 15F);
+            label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(16, 13);
             label1.Name = "label1";
             label1.Size = new Size(138, 25);
             label1.TabIndex = 0;
             label1.Text = "Ocupaciones";
-            // 
-            // pbxCerrar
-            // 
-            pbxCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pbxCerrar.Cursor = Cursors.Hand;
-            pbxCerrar.Image = (Image)resources.GetObject("pbxCerrar.Image");
-            pbxCerrar.Location = new Point(752, 3);
-            pbxCerrar.Name = "pbxCerrar";
-            pbxCerrar.Size = new Size(40, 29);
-            pbxCerrar.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxCerrar.TabIndex = 18;
-            pbxCerrar.TabStop = false;
-            pbxCerrar.Click += pbxCerrar_Click;
             // 
             // dataGridView1
             // 
@@ -164,10 +165,10 @@
             Name = "frmOcupaciones";
             Text = "frmOcupaciones";
             frmletrero.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbxCerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxClose).EndInit();
             pnlTitulo.ResumeLayout(false);
             pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxCerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

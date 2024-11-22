@@ -73,7 +73,7 @@
             // 
             // pnlTitulo
             // 
-            pnlTitulo.BackColor = Color.MediumTurquoise;
+            pnlTitulo.BackColor = Color.FromArgb(124, 175, 32);
             pnlTitulo.Controls.Add(label1);
             pnlTitulo.Location = new Point(12, 12);
             pnlTitulo.Name = "pnlTitulo";
@@ -84,6 +84,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 20F);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(22, 13);
             label1.Name = "label1";
             label1.Size = new Size(328, 32);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,9 +13,13 @@ namespace ClinicaBD
 {
     public partial class frmLogin : Form
     {
+        private readonly AdminLogin adminLogin;
+        frmCentral frm = new frmCentral();
         public frmLogin()
         {
             InitializeComponent();
+            string connectionString = ConfigurationManager.ConnectionStrings["ClinicaBD"].ConnectionString;
+            adminLogin = new AdminLogin(connectionString);
         }
 
         private void pbxClose_Click(object sender, EventArgs e)
@@ -22,19 +27,65 @@ namespace ClinicaBD
             Application.Exit();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        
+
+        private void btnAcceder_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtUsername.Text != "USUARIO")
+                {
+                    if (txtPassword.Text != "CONTRASEÑA")
+                    {
+                        var validLogin = adminLogin.Login(txtUsername.Text,txtPassword.Text);
+                        if (validLogin == true)
+                        {
+                            //frm.ShowDialog();
 
-        }
+                            if (this.InvokeRequired)
+                            {
+                                this.Invoke(new Action(() =>
+                                {
+                                    frm.Show();
+                                }));
+                            }
+                            else
+                            {
+                                frm.Show();
+                            }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+                            // Oculta el formulario de login
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Usuario y Contraseña no existe");
+                            txtPassword.Text = "CONTRASEÑA";
+                            txtPassword.ForeColor = Color.DarkGray;
+                            txtPassword.UseSystemPasswordChar = false;
+                            txtUsername.Focus();
+                        }
 
-        }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese una contraseña válida.");
+                        txtPassword.Focus();
+                        txtPassword.Clear();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un usuario válido.");
+                }
+            }
 
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

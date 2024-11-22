@@ -34,6 +34,7 @@
             button2 = new Button();
             pnlTitulo = new Panel();
             groupBox1 = new GroupBox();
+            linkLabel1 = new LinkLabel();
             textBox4 = new TextBox();
             label7 = new Label();
             comboBox1 = new ComboBox();
@@ -46,7 +47,6 @@
             label3 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
-            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             pnlTitulo.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -56,6 +56,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 20F);
+            label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(22, 13);
             label1.Name = "label1";
             label1.Size = new Size(290, 32);
@@ -95,7 +96,7 @@
             // 
             // pnlTitulo
             // 
-            pnlTitulo.BackColor = Color.MediumTurquoise;
+            pnlTitulo.BackColor = Color.FromArgb(124, 175, 32);
             pnlTitulo.Controls.Add(label1);
             pnlTitulo.Location = new Point(33, 22);
             pnlTitulo.Name = "pnlTitulo";
@@ -124,6 +125,17 @@
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             groupBox1.Text = "DATOS PERSONALES";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(1117, 78);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(189, 21);
+            linkLabel1.TabIndex = 25;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Agregar mas ocupaciones";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // textBox4
             // 
@@ -228,17 +240,6 @@
             label2.Size = new Size(78, 18);
             label2.TabIndex = 13;
             label2.Text = "Nombre:";
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(1117, 78);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(189, 21);
-            linkLabel1.TabIndex = 25;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Agregar mas ocupaciones";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // frmPaciente
             // 
