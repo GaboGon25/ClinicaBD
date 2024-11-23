@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnAgregar = new Button();
+            btnEditar = new Button();
             pnlTitulo = new Panel();
             groupBox1 = new GroupBox();
             linkLabel1 = new LinkLabel();
@@ -46,12 +46,12 @@
             dtpFechaNacimiento = new DateTimePicker();
             txtApellidoP = new TextBox();
             label3 = new Label();
+            txtCorreo = new TextBox();
+            label8 = new Label();
+            txtPacienteID = new TextBox();
             txtNombreP = new TextBox();
             label2 = new Label();
             dgvPacientes = new DataGridView();
-            label8 = new Label();
-            txtCorreo = new TextBox();
-            txtPacienteID = new TextBox();
             pnlTitulo.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPacientes).BeginInit();
@@ -68,31 +68,33 @@
             label1.TabIndex = 0;
             label1.Text = "Registro de Paciente";
             // 
-            // button1
+            // btnAgregar
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.DarkGreen;
-            button1.Font = new Font("Times New Roman", 15.75F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(379, 361);
-            button1.Name = "button1";
-            button1.Size = new Size(203, 61);
-            button1.TabIndex = 14;
-            button1.Text = "AGREGAR";
-            button1.UseVisualStyleBackColor = false;
+            btnAgregar.Anchor = AnchorStyles.None;
+            btnAgregar.BackColor = Color.DarkGreen;
+            btnAgregar.Font = new Font("Times New Roman", 15.75F);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(379, 361);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(203, 61);
+            btnAgregar.TabIndex = 14;
+            btnAgregar.Text = "AGREGAR";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // button2
+            // btnEditar
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.DodgerBlue;
-            button2.Font = new Font("Times New Roman", 15.75F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(797, 361);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 61);
-            button2.TabIndex = 15;
-            button2.Text = "EDITAR";
-            button2.UseVisualStyleBackColor = false;
+            btnEditar.Anchor = AnchorStyles.None;
+            btnEditar.BackColor = Color.DodgerBlue;
+            btnEditar.Font = new Font("Times New Roman", 15.75F);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(797, 361);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(203, 61);
+            btnEditar.TabIndex = 15;
+            btnEditar.Text = "EDITAR";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // pnlTitulo
             // 
@@ -181,7 +183,7 @@
             // 
             // txtCelular
             // 
-            txtCelular.Location = new Point(564, 163);
+            txtCelular.Location = new Point(564, 103);
             txtCelular.Name = "txtCelular";
             txtCelular.Size = new Size(236, 29);
             txtCelular.TabIndex = 20;
@@ -190,7 +192,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 14.25F);
-            label5.Location = new Point(394, 168);
+            label5.Location = new Point(394, 111);
             label5.Name = "label5";
             label5.Size = new Size(137, 21);
             label5.TabIndex = 19;
@@ -200,7 +202,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 14.25F);
-            label4.Location = new Point(372, 111);
+            label4.Location = new Point(394, 58);
             label4.Name = "label4";
             label4.Size = new Size(171, 21);
             label4.TabIndex = 18;
@@ -208,14 +210,14 @@
             // 
             // dtpFechaNacimiento
             // 
-            dtpFechaNacimiento.Location = new Point(564, 111);
+            dtpFechaNacimiento.Location = new Point(564, 55);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(236, 29);
             dtpFechaNacimiento.TabIndex = 17;
             // 
             // txtApellidoP
             // 
-            txtApellidoP.Location = new Point(130, 163);
+            txtApellidoP.Location = new Point(130, 111);
             txtApellidoP.Name = "txtApellidoP";
             txtApellidoP.Size = new Size(236, 29);
             txtApellidoP.TabIndex = 16;
@@ -224,15 +226,40 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 14.25F);
-            label3.Location = new Point(33, 168);
+            label3.Location = new Point(35, 111);
             label3.Name = "label3";
             label3.Size = new Size(77, 21);
             label3.TabIndex = 15;
             label3.Text = "Apellido:";
             // 
+            // txtCorreo
+            // 
+            txtCorreo.Location = new Point(130, 163);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(236, 29);
+            txtCorreo.TabIndex = 14;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Times New Roman", 14.25F);
+            label8.Location = new Point(35, 166);
+            label8.Name = "label8";
+            label8.Size = new Size(67, 21);
+            label8.TabIndex = 13;
+            label8.Text = "Correo:";
+            // 
+            // txtPacienteID
+            // 
+            txtPacienteID.Location = new Point(356, 11);
+            txtPacienteID.Name = "txtPacienteID";
+            txtPacienteID.Size = new Size(71, 29);
+            txtPacienteID.TabIndex = 14;
+            txtPacienteID.Visible = false;
+            // 
             // txtNombreP
             // 
-            txtNombreP.Location = new Point(130, 111);
+            txtNombreP.Location = new Point(130, 55);
             txtNombreP.Name = "txtNombreP";
             txtNombreP.Size = new Size(236, 29);
             txtNombreP.TabIndex = 14;
@@ -241,7 +268,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 14.25F);
-            label2.Location = new Point(33, 116);
+            label2.Location = new Point(35, 58);
             label2.Name = "label2";
             label2.Size = new Size(75, 21);
             label2.TabIndex = 13;
@@ -252,52 +279,29 @@
             dgvPacientes.Anchor = AnchorStyles.None;
             dgvPacientes.BackgroundColor = SystemColors.Control;
             dgvPacientes.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvPacientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPacientes.EnableHeadersVisualStyles = false;
-            dgvPacientes.Location = new Point(45, 479);
+            dgvPacientes.Location = new Point(324, 472);
             dgvPacientes.Name = "dgvPacientes";
             dgvPacientes.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvPacientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvPacientes.Size = new Size(1299, 267);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dgvPacientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPacientes.Size = new Size(739, 267);
             dgvPacientes.TabIndex = 24;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Times New Roman", 14.25F);
-            label8.Location = new Point(467, 60);
-            label8.Name = "label8";
-            label8.Size = new Size(67, 21);
-            label8.TabIndex = 13;
-            label8.Text = "Correo:";
-            // 
-            // txtCorreo
-            // 
-            txtCorreo.Location = new Point(564, 55);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(236, 29);
-            txtCorreo.TabIndex = 14;
-            // 
-            // txtPacienteID
-            // 
-            txtPacienteID.Location = new Point(295, 60);
-            txtPacienteID.Name = "txtPacienteID";
-            txtPacienteID.Size = new Size(71, 29);
-            txtPacienteID.TabIndex = 14;
+            dgvPacientes.CellClick += dgvPacientes_CellClick_1;
             // 
             // frmPaciente
             // 
@@ -307,11 +311,12 @@
             Controls.Add(dgvPacientes);
             Controls.Add(groupBox1);
             Controls.Add(pnlTitulo);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnEditar);
+            Controls.Add(btnAgregar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmPaciente";
             Text = "frmPaciente";
+            Load += frmPaciente_Load_1;
             pnlTitulo.ResumeLayout(false);
             pnlTitulo.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -323,8 +328,8 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button btnAgregar;
+        private Button btnEditar;
         private Panel pnlTitulo;
         private GroupBox groupBox1;
         private TextBox txtDireccion;

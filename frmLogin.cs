@@ -61,9 +61,9 @@ namespace ClinicaBD
                         else
                         {
                             MessageBox.Show("El Usuario y Contraseña no existe");
-                            txtPassword.Text = "CONTRASEÑA";
-                            txtPassword.ForeColor = Color.DarkGray;
-                            txtPassword.UseSystemPasswordChar = false;
+                            txtPassword.Clear();
+                            txtUsername.Clear();
+                            txtPassword.UseSystemPasswordChar = true;
                             txtUsername.Focus();
                         }
 

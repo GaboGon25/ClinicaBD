@@ -36,16 +36,18 @@
             pbxClose = new PictureBox();
             pnlTitulo = new Panel();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
+            dgvOcupaciones = new DataGridView();
+            txtNombreOcupacion = new TextBox();
             label2 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            btnEditar = new Button();
+            btnAgregar = new Button();
+            txtOcupacionID = new TextBox();
+            btnEliminar = new Button();
             frmletrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxClose).BeginInit();
             pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOcupaciones).BeginInit();
             SuspendLayout();
             // 
             // frmletrero
@@ -106,11 +108,11 @@
             label1.TabIndex = 0;
             label1.Text = "Ocupaciones";
             // 
-            // dataGridView1
+            // dgvOcupaciones
             // 
-            dataGridView1.Anchor = AnchorStyles.None;
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.BorderStyle = BorderStyle.None;
+            dgvOcupaciones.Anchor = AnchorStyles.None;
+            dgvOcupaciones.BackgroundColor = SystemColors.Control;
+            dgvOcupaciones.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
             dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -118,30 +120,31 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(40, 227);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
+            dgvOcupaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvOcupaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOcupaciones.EnableHeadersVisualStyles = false;
+            dgvOcupaciones.Location = new Point(305, 224);
+            dgvOcupaciones.Name = "dgvOcupaciones";
+            dgvOcupaciones.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Size = new Size(717, 168);
-            dataGridView1.TabIndex = 18;
+            dgvOcupaciones.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvOcupaciones.Size = new Size(168, 168);
+            dgvOcupaciones.TabIndex = 18;
+            dgvOcupaciones.CellClick += dgvOcupaciones_CellClick;
             // 
-            // textBox1
+            // txtNombreOcupacion
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(316, 121);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 22);
-            textBox1.TabIndex = 20;
+            txtNombreOcupacion.Anchor = AnchorStyles.None;
+            txtNombreOcupacion.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombreOcupacion.Location = new Point(316, 121);
+            txtNombreOcupacion.Name = "txtNombreOcupacion";
+            txtNombreOcupacion.Size = new Size(240, 22);
+            txtNombreOcupacion.TabIndex = 20;
             // 
             // label2
             // 
@@ -154,53 +157,80 @@
             label2.TabIndex = 19;
             label2.Text = "Nombre:";
             // 
-            // button2
+            // btnEditar
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.DodgerBlue;
-            button2.Font = new Font("Times New Roman", 12F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(458, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(155, 47);
-            button2.TabIndex = 22;
-            button2.Text = "EDITAR";
-            button2.UseVisualStyleBackColor = false;
+            btnEditar.Anchor = AnchorStyles.None;
+            btnEditar.BackColor = Color.DodgerBlue;
+            btnEditar.Font = new Font("Times New Roman", 12F);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(553, 159);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(155, 47);
+            btnEditar.TabIndex = 22;
+            btnEditar.Text = "EDITAR";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
-            // button1
+            // btnAgregar
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.DarkGreen;
-            button1.Font = new Font("Times New Roman", 12F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(179, 159);
-            button1.Name = "button1";
-            button1.Size = new Size(155, 47);
-            button1.TabIndex = 21;
-            button1.Text = "AGREGAR";
-            button1.UseVisualStyleBackColor = false;
+            btnAgregar.Anchor = AnchorStyles.None;
+            btnAgregar.BackColor = Color.DarkGreen;
+            btnAgregar.Font = new Font("Times New Roman", 12F);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(88, 159);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(155, 47);
+            btnAgregar.TabIndex = 21;
+            btnAgregar.Text = "AGREGAR";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // txtOcupacionID
+            // 
+            txtOcupacionID.Location = new Point(316, 77);
+            txtOcupacionID.Name = "txtOcupacionID";
+            txtOcupacionID.Size = new Size(100, 23);
+            txtOcupacionID.TabIndex = 23;
+            txtOcupacionID.Visible = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Anchor = AnchorStyles.None;
+            btnEliminar.BackColor = Color.Red;
+            btnEliminar.Font = new Font("Times New Roman", 12F);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(318, 159);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(155, 47);
+            btnEliminar.TabIndex = 24;
+            btnEliminar.Text = "ELIMINAR";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // frmOcupaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(795, 418);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(btnEliminar);
+            Controls.Add(txtOcupacionID);
+            Controls.Add(btnEditar);
+            Controls.Add(btnAgregar);
+            Controls.Add(txtNombreOcupacion);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvOcupaciones);
             Controls.Add(pnlTitulo);
             Controls.Add(frmletrero);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmOcupaciones";
             Text = "frmOcupaciones";
+            Load += frmOcupaciones_Load;
             frmletrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxCerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxClose).EndInit();
             pnlTitulo.ResumeLayout(false);
             pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOcupaciones).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -212,10 +242,12 @@
         private Panel pnlTitulo;
         private Label label1;
         private PictureBox pbxCerrar;
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private DataGridView dgvOcupaciones;
+        private TextBox txtNombreOcupacion;
         private Label label2;
-        private Button button2;
-        private Button button1;
+        private Button btnEditar;
+        private Button btnAgregar;
+        private TextBox txtOcupacionID;
+        private Button btnEliminar;
     }
 }

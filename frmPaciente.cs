@@ -23,11 +23,6 @@ namespace ClinicaBD
         {
             frmOcupaciones frmOcupaciones = new frmOcupaciones();
             frmOcupaciones.ShowDialog();
-        }
-
-        private void frmPaciente_Load(object sender, EventArgs e)
-        {
-            CargarPacientes();
             CargarOcupaciones();
         }
 
@@ -55,7 +50,69 @@ namespace ClinicaBD
             }
         }
 
-        private void btnAgregarP_Click(object sender, EventArgs e)
+        private void CargarPacientes()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = @"SELECT 
+                                Paciente.PacienteID,
+                                Paciente.Nombre,
+                                Paciente.Apellido,
+                                Paciente.Fecha_Nacimiento,
+                                Paciente.Telefono,
+                                Paciente.Correo,
+                                Paciente.Direccion,
+                                Ocupacion.OcupacionID,
+                                Ocupacion.Nombre AS OcupacionNombre
+                             FROM Paciente
+                             INNER JOIN Ocupacion ON Paciente.OcupacionID = Ocupacion.OcupacionID";
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvPacientes.DataSource = dt;
+                    dgvPacientes.Columns["PacienteID"].Visible = false;
+                    dgvPacientes.Columns["OcupacionID"].Visible = false;
+                    dgvPacientes.Columns["OcupacionNombre"].HeaderText = "Ocupación";
+
+                    // Esto reordena las columnas para que la ocupacion no aparezca de ultimo
+                    dgvPacientes.Columns["Nombre"].DisplayIndex = 0; 
+                    dgvPacientes.Columns["Apellido"].DisplayIndex = 1; 
+                    dgvPacientes.Columns["OcupacionNombre"].DisplayIndex = 2; 
+                    dgvPacientes.Columns["Fecha_Nacimiento"].DisplayIndex = 3;
+                    dgvPacientes.Columns["Telefono"].DisplayIndex = 4;
+                    dgvPacientes.Columns["Correo"].DisplayIndex = 5;
+                    dgvPacientes.Columns["Direccion"].DisplayIndex = 6;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar pacientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombreP.Clear();
+            txtApellidoP.Clear();
+            cmbOcupacion.SelectedIndex = -1;
+            txtCelular.Clear();
+            txtDireccion.Clear();
+            dtpFechaNacimiento.Value = DateTime.Now;
+            txtPacienteID.Clear();
+            txtCorreo.Clear();
+        }
+
+        private void frmPaciente_Load_1(object sender, EventArgs e)
+        {
+            CargarPacientes();
+            CargarOcupaciones();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -86,12 +143,12 @@ namespace ClinicaBD
                     cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text.Trim());
                     cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text.Trim());
 
-                    int rowsAffected = cmd.ExecuteNonQuery(); 
+                    int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Paciente agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarCampos(); 
+                        LimpiarCampos();
                         CargarPacientes();
                     }
                     else
@@ -106,58 +163,11 @@ namespace ClinicaBD
             }
         }
 
-        private void CargarPacientes()
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    string query = @"SELECT 
-                                Paciente.PacienteID,
-                                Paciente.Nombre,
-                                Paciente.Apellido,
-                                Paciente.Fecha_Nacimiento,
-                                Paciente.Telefono,
-                                Paciente.Correo,
-                                Paciente.Direccion,
-                                Ocupacion.OcupacionID,
-                                Ocupacion.Nombre AS OcupacionNombre
-                             FROM Paciente
-                             INNER JOIN Ocupacion ON Paciente.OcupacionID = Ocupacion.OcupacionID";
-                    SqlDataAdapter da = new SqlDataAdapter(query, con);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dgvPacientes.DataSource = dt;
-                    dgvPacientes.Columns["PacienteID"].Visible = false;
-                    dgvPacientes.Columns["OcupacionID"].Visible = false; 
-                    dgvPacientes.Columns["OcupacionNombre"].HeaderText = "Ocupación";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar pacientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void LimpiarCampos()
-        {
-            txtNombreP.Clear();
-            txtApellidoP.Clear();
-            cmbOcupacion.SelectedIndex = -1;
-            txtCelular.Clear();
-            txtDireccion.Clear();
-            dtpFechaNacimiento.Value = DateTime.Now; 
-            txtPacienteID.Clear();
-            txtCorreo.Clear();
-        }
-
-        private void btnEditarP_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(txtPacienteID.Text)) 
+                if (string.IsNullOrWhiteSpace(txtPacienteID.Text))
                 {
                     MessageBox.Show("Seleccione un paciente para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -183,7 +193,7 @@ namespace ClinicaBD
                                  WHERE PacienteID = @PacienteID";
                         SqlCommand cmd = new SqlCommand(query, con);
 
-                        
+
                         cmd.Parameters.AddWithValue("@OcupacionID", (cmbOcupacion.SelectedItem as DataRowView)["OcupacionID"]);
                         cmd.Parameters.AddWithValue("@Nombre", txtNombreP.Text.Trim());
                         cmd.Parameters.AddWithValue("@Apellido", txtApellidoP.Text.Trim());
@@ -214,20 +224,20 @@ namespace ClinicaBD
             }
         }
 
-        private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPacientes_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPacientes.Rows[e.RowIndex];
 
                 txtNombreP.Text = row.Cells["Nombre"].Value.ToString();
                 txtApellidoP.Text = row.Cells["Apellido"].Value.ToString();
-                cmbOcupacion.SelectedValue = row.Cells["OcupacionID"].Value; 
+                cmbOcupacion.SelectedValue = row.Cells["OcupacionID"].Value;
                 dtpFechaNacimiento.Value = Convert.ToDateTime(row.Cells["Fecha_Nacimiento"].Value);
                 txtCelular.Text = row.Cells["Telefono"].Value.ToString();
                 txtDireccion.Text = row.Cells["Direccion"].Value.ToString();
                 txtCorreo.Text = row.Cells["Correo"].Value.ToString();
-                txtPacienteID.Text = row.Cells["PacienteID"].Value.ToString(); 
+                txtPacienteID.Text = row.Cells["PacienteID"].Value.ToString();
             }
         }
     }
