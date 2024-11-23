@@ -60,6 +60,7 @@
             frmletrero.Name = "frmletrero";
             frmletrero.Size = new Size(811, 40);
             frmletrero.TabIndex = 0;
+            frmletrero.MouseDown += frmletrero_MouseDown;
             // 
             // pbxClose
             // 
@@ -108,9 +109,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(459, 153);
+            pictureBox2.Location = new Point(468, 157);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(39, 34);
+            pictureBox2.Size = new Size(30, 34);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
@@ -134,9 +135,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(459, 248);
+            pictureBox3.Location = new Point(468, 252);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(40, 34);
+            pictureBox3.Size = new Size(31, 34);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;

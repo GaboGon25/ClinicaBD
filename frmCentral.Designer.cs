@@ -64,16 +64,16 @@
             pnlLetrero.Dock = DockStyle.Top;
             pnlLetrero.Location = new Point(0, 0);
             pnlLetrero.Name = "pnlLetrero";
-            pnlLetrero.Size = new Size(1807, 65);
+            pnlLetrero.Size = new Size(1386, 59);
             pnlLetrero.TabIndex = 0;
-            pnlLetrero.Paint += pnlLetrero_Paint;
+            pnlLetrero.MouseDown += frmletrero_MouseDown;
             // 
             // pbxOcultar
             // 
             pbxOcultar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbxOcultar.Cursor = Cursors.Hand;
             pbxOcultar.Image = (Image)resources.GetObject("pbxOcultar.Image");
-            pbxOcultar.Location = new Point(1660, 12);
+            pbxOcultar.Location = new Point(1239, 12);
             pbxOcultar.Name = "pbxOcultar";
             pbxOcultar.Size = new Size(44, 34);
             pbxOcultar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -86,7 +86,7 @@
             pbxMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbxMinimizar.Cursor = Cursors.Hand;
             pbxMinimizar.Image = (Image)resources.GetObject("pbxMinimizar.Image");
-            pbxMinimizar.Location = new Point(1710, 12);
+            pbxMinimizar.Location = new Point(1289, 12);
             pbxMinimizar.Name = "pbxMinimizar";
             pbxMinimizar.Size = new Size(44, 34);
             pbxMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -99,7 +99,7 @@
             pbxCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbxCerrar.Cursor = Cursors.Hand;
             pbxCerrar.Image = (Image)resources.GetObject("pbxCerrar.Image");
-            pbxCerrar.Location = new Point(1760, 12);
+            pbxCerrar.Location = new Point(1339, 12);
             pbxCerrar.Name = "pbxCerrar";
             pbxCerrar.Size = new Size(44, 34);
             pbxCerrar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -112,7 +112,7 @@
             pbxRestauar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbxRestauar.Cursor = Cursors.Hand;
             pbxRestauar.Image = (Image)resources.GetObject("pbxRestauar.Image");
-            pbxRestauar.Location = new Point(1710, 12);
+            pbxRestauar.Location = new Point(1289, 12);
             pbxRestauar.Name = "pbxRestauar";
             pbxRestauar.Size = new Size(44, 34);
             pbxRestauar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -133,11 +133,10 @@
             pnlSideBar.Controls.Add(btnPacientes);
             pnlSideBar.Controls.Add(pictureBox1);
             pnlSideBar.Dock = DockStyle.Left;
-            pnlSideBar.Location = new Point(0, 65);
+            pnlSideBar.Location = new Point(0, 59);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(200, 769);
+            pnlSideBar.Size = new Size(200, 729);
             pnlSideBar.TabIndex = 1;
-            pnlSideBar.Paint += pnlSideBar_Paint;
             // 
             // panel4
             // 
@@ -189,7 +188,7 @@
             btnCitas.FlatAppearance.BorderSize = 0;
             btnCitas.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnCitas.FlatStyle = FlatStyle.Flat;
-            btnCitas.Font = new Font("Century Gothic", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCitas.Font = new Font("Century Schoolbook", 11.25F);
             btnCitas.ForeColor = SystemColors.ControlLightLight;
             btnCitas.Location = new Point(0, 381);
             btnCitas.Margin = new Padding(2, 1, 2, 1);
@@ -215,7 +214,7 @@
             btnExpediente.FlatAppearance.BorderSize = 0;
             btnExpediente.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnExpediente.FlatStyle = FlatStyle.Flat;
-            btnExpediente.Font = new Font("Century Gothic", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExpediente.Font = new Font("Century Schoolbook", 11.25F);
             btnExpediente.ForeColor = SystemColors.ControlLightLight;
             btnExpediente.Location = new Point(2, 272);
             btnExpediente.Margin = new Padding(2, 1, 2, 1);
@@ -232,7 +231,7 @@
             btnPacientes.FlatAppearance.BorderSize = 0;
             btnPacientes.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnPacientes.FlatStyle = FlatStyle.Flat;
-            btnPacientes.Font = new Font("Century Gothic", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPacientes.Font = new Font("Century Schoolbook", 11.25F);
             btnPacientes.ForeColor = SystemColors.ControlLightLight;
             btnPacientes.Location = new Point(2, 177);
             btnPacientes.Margin = new Padding(2, 1, 2, 1);
@@ -257,23 +256,22 @@
             // 
             pnlContenedor.BackColor = SystemColors.ControlLight;
             pnlContenedor.Dock = DockStyle.Fill;
-            pnlContenedor.Location = new Point(200, 65);
+            pnlContenedor.Location = new Point(200, 59);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.Size = new Size(1607, 769);
+            pnlContenedor.Size = new Size(1186, 729);
             pnlContenedor.TabIndex = 2;
             // 
             // frmCentral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1807, 834);
+            ClientSize = new Size(1386, 788);
             Controls.Add(pnlContenedor);
             Controls.Add(pnlSideBar);
             Controls.Add(pnlLetrero);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmCentral";
             Text = "frmCentral";
-            Load += frmCentral_Load;
             pnlLetrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxOcultar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxMinimizar).EndInit();
