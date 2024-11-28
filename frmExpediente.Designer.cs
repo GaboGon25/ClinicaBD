@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             pnlTitulo = new Panel();
             label1 = new Label();
             button2 = new Button();
@@ -65,12 +65,19 @@
             radioButton8 = new RadioButton();
             radioButton9 = new RadioButton();
             dataGridView1 = new DataGridView();
+            linkLabel1 = new LinkLabel();
+            txtNombreP = new TextBox();
+            txtApellidoP = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            groupBox5 = new GroupBox();
             pnlTitulo.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // pnlTitulo
@@ -100,7 +107,7 @@
             button2.BackColor = Color.DodgerBlue;
             button2.Font = new Font("Times New Roman", 15F);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(967, 386);
+            button2.Location = new Point(1137, 386);
             button2.Name = "button2";
             button2.Size = new Size(203, 61);
             button2.TabIndex = 20;
@@ -113,7 +120,7 @@
             button1.BackColor = Color.DarkGreen;
             button1.Font = new Font("Times New Roman", 15F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(645, 386);
+            button1.Location = new Point(928, 386);
             button1.Name = "button1";
             button1.Size = new Size(203, 61);
             button1.TabIndex = 19;
@@ -125,9 +132,9 @@
             groupBox1.Anchor = AnchorStyles.None;
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Font = new Font("Times New Roman", 11.25F);
-            groupBox1.Location = new Point(462, 12);
+            groupBox1.Location = new Point(588, 25);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(373, 77);
+            groupBox1.Size = new Size(373, 95);
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "BIOTIPO CUTANEO";
@@ -152,9 +159,9 @@
             groupBox2.Controls.Add(checkBox2);
             groupBox2.Controls.Add(checkBox1);
             groupBox2.Font = new Font("Times New Roman", 11.25F);
-            groupBox2.Location = new Point(967, 141);
+            groupBox2.Location = new Point(967, 129);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(373, 180);
+            groupBox2.Size = new Size(373, 192);
             groupBox2.TabIndex = 32;
             groupBox2.TabStop = false;
             groupBox2.Text = "CUIDADOS DE PIEL";
@@ -370,7 +377,7 @@
             // 
             textBox8.Anchor = AnchorStyles.None;
             textBox8.Font = new Font("Times New Roman", 11.25F);
-            textBox8.Location = new Point(145, 345);
+            textBox8.Location = new Point(523, 327);
             textBox8.Multiline = true;
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(332, 122);
@@ -381,7 +388,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(34, 346);
+            label9.Location = new Point(412, 328);
             label9.Name = "label9";
             label9.Size = new Size(105, 19);
             label9.TabIndex = 61;
@@ -427,34 +434,94 @@
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(0, 492);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.Size = new Size(1386, 238);
             dataGridView1.TabIndex = 62;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.Location = new Point(12, 466);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(295, 19);
+            linkLabel1.TabIndex = 63;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Seleccione al paciente para llenar su expediente";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // txtNombreP
+            // 
+            txtNombreP.Location = new Point(112, 24);
+            txtNombreP.Name = "txtNombreP";
+            txtNombreP.Size = new Size(177, 25);
+            txtNombreP.TabIndex = 61;
+            // 
+            // txtApellidoP
+            // 
+            txtApellidoP.Location = new Point(112, 84);
+            txtApellidoP.Name = "txtApellidoP";
+            txtApellidoP.Size = new Size(177, 25);
+            txtApellidoP.TabIndex = 62;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(40, 27);
+            label10.Name = "label10";
+            label10.Size = new Size(56, 17);
+            label10.TabIndex = 63;
+            label10.Text = "Nombre";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(36, 87);
+            label11.Name = "label11";
+            label11.Size = new Size(56, 17);
+            label11.TabIndex = 64;
+            label11.Text = "Apellido";
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(txtNombreP);
+            groupBox5.Controls.Add(txtApellidoP);
+            groupBox5.Controls.Add(label10);
+            groupBox5.Controls.Add(label11);
+            groupBox5.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox5.Location = new Point(12, 327);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(344, 136);
+            groupBox5.TabIndex = 65;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "PACIENTE";
             // 
             // frmExpediente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1386, 730);
+            Controls.Add(groupBox5);
+            Controls.Add(linkLabel1);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox4);
             Controls.Add(label9);
@@ -479,6 +546,8 @@
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -520,5 +589,11 @@
         private CheckBox checkBox2;
         private CheckBox checkBox1;
         private DataGridView dataGridView1;
+        private LinkLabel linkLabel1;
+        private TextBox txtNombreP;
+        private TextBox txtApellidoP;
+        private Label label10;
+        private Label label11;
+        private GroupBox groupBox5;
     }
 }

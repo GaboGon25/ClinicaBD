@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
-            comboBox3 = new ComboBox();
             label5 = new Label();
             comboBox2 = new ComboBox();
             textBox4 = new TextBox();
@@ -48,6 +47,10 @@
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            txtNombreP = new TextBox();
+            txtApellidoP = new TextBox();
+            label8 = new Label();
+            linkLabel1 = new LinkLabel();
             groupBox1.SuspendLayout();
             pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -56,7 +59,10 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.None;
-            groupBox1.Controls.Add(comboBox3);
+            groupBox1.Controls.Add(linkLabel1);
+            groupBox1.Controls.Add(txtApellidoP);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(txtNombreP);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(comboBox2);
             groupBox1.Controls.Add(textBox4);
@@ -75,16 +81,6 @@
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "DATOS PERSONALES";
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.None;
-            comboBox3.Font = new Font("Times New Roman", 14.25F);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(123, 64);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(236, 29);
-            comboBox3.TabIndex = 28;
             // 
             // label5
             // 
@@ -133,7 +129,7 @@
             comboBox1.Anchor = AnchorStyles.None;
             comboBox1.Font = new Font("Times New Roman", 14.25F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(901, 59);
+            comboBox1.Location = new Point(901, 37);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(163, 29);
             comboBox1.TabIndex = 22;
@@ -143,7 +139,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Times New Roman", 14.25F);
-            label6.Location = new Point(808, 64);
+            label6.Location = new Point(808, 42);
             label6.Name = "label6";
             label6.Size = new Size(66, 21);
             label6.TabIndex = 21;
@@ -154,7 +150,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 14.25F);
-            label4.Location = new Point(444, 67);
+            label4.Location = new Point(444, 99);
             label4.Name = "label4";
             label4.Size = new Size(59, 21);
             label4.TabIndex = 18;
@@ -164,7 +160,7 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.Font = new Font("Times New Roman", 14.25F);
-            dateTimePicker1.Location = new Point(509, 59);
+            dateTimePicker1.Location = new Point(518, 91);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(236, 29);
             dateTimePicker1.TabIndex = 17;
@@ -173,7 +169,7 @@
             // 
             textBox2.Anchor = AnchorStyles.None;
             textBox2.Font = new Font("Times New Roman", 14.25F);
-            textBox2.Location = new Point(123, 150);
+            textBox2.Location = new Point(518, 37);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(236, 29);
             textBox2.TabIndex = 16;
@@ -183,7 +179,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 14.25F);
-            label3.Location = new Point(26, 155);
+            label3.Location = new Point(444, 42);
             label3.Name = "label3";
             label3.Size = new Size(51, 21);
             label3.TabIndex = 15;
@@ -194,11 +190,11 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 14.25F);
-            label2.Location = new Point(26, 74);
+            label2.Location = new Point(26, 42);
             label2.Name = "label2";
-            label2.Size = new Size(76, 21);
+            label2.Size = new Size(75, 21);
             label2.TabIndex = 13;
-            label2.Text = "Paciente:";
+            label2.Text = "Nombre:";
             // 
             // pnlTitulo
             // 
@@ -252,28 +248,69 @@
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(71, 451);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.Size = new Size(1245, 267);
             dataGridView1.TabIndex = 23;
+            // 
+            // txtNombreP
+            // 
+            txtNombreP.Anchor = AnchorStyles.None;
+            txtNombreP.Font = new Font("Times New Roman", 14.25F);
+            txtNombreP.Location = new Point(123, 34);
+            txtNombreP.Name = "txtNombreP";
+            txtNombreP.Size = new Size(236, 29);
+            txtNombreP.TabIndex = 28;
+            // 
+            // txtApellidoP
+            // 
+            txtApellidoP.Anchor = AnchorStyles.None;
+            txtApellidoP.Font = new Font("Times New Roman", 14.25F);
+            txtApellidoP.Location = new Point(123, 91);
+            txtApellidoP.Name = "txtApellidoP";
+            txtApellidoP.Size = new Size(236, 29);
+            txtApellidoP.TabIndex = 30;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.None;
+            label8.AutoSize = true;
+            label8.Font = new Font("Times New Roman", 14.25F);
+            label8.Location = new Point(26, 99);
+            label8.Name = "label8";
+            label8.Size = new Size(77, 21);
+            label8.TabIndex = 29;
+            label8.Text = "Apellido:";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.Location = new Point(26, 160);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(268, 19);
+            linkLabel1.TabIndex = 64;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Seleccione al paciente para registrar su cita";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // frmCitas
             // 
@@ -313,8 +350,11 @@
         private Label label1;
         private Button button2;
         private Button button1;
-        private ComboBox comboBox3;
         private Label label5;
         private DataGridView dataGridView1;
+        private TextBox txtApellidoP;
+        private Label label8;
+        private TextBox txtNombreP;
+        private LinkLabel linkLabel1;
     }
 }

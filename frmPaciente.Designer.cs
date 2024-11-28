@@ -183,7 +183,7 @@
             // 
             // txtCelular
             // 
-            txtCelular.Location = new Point(564, 103);
+            txtCelular.Location = new Point(571, 103);
             txtCelular.Name = "txtCelular";
             txtCelular.Size = new Size(236, 29);
             txtCelular.TabIndex = 20;
@@ -210,7 +210,7 @@
             // 
             // dtpFechaNacimiento
             // 
-            dtpFechaNacimiento.Location = new Point(564, 55);
+            dtpFechaNacimiento.Location = new Point(571, 55);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(236, 29);
             dtpFechaNacimiento.TabIndex = 17;
