@@ -28,55 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pnlTitulo = new Panel();
             label1 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            btnEditar = new Button();
+            btnAgregar = new Button();
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
+            cmbBiotipoCutaneo = new ComboBox();
             groupBox2 = new GroupBox();
-            checkBox7 = new CheckBox();
-            checkBox6 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            checkBoxNinguno = new CheckBox();
+            checkBoxProtectorSolar = new CheckBox();
+            checkBoxTonico = new CheckBox();
+            checkBoxAceites = new CheckBox();
+            checkBoxSerum = new CheckBox();
+            checkBoxCremas = new CheckBox();
+            checkBoxJabonFacial = new CheckBox();
             groupBox3 = new GroupBox();
             label8 = new Label();
-            textBox1 = new TextBox();
-            textBox4 = new TextBox();
+            txtVasosAgua = new TextBox();
+            txtTrasnoche = new TextBox();
             label7 = new Label();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
+            txtConsumoMedicamento = new TextBox();
+            txtConsumoCafe = new TextBox();
             label6 = new Label();
-            textBox2 = new TextBox();
-            textBox6 = new TextBox();
+            txtConsumoTabaco = new TextBox();
+            txtConsumoSuplementos = new TextBox();
             label5 = new Label();
-            textBox7 = new TextBox();
+            txtConsumoLicor = new TextBox();
             label2 = new Label();
             label4 = new Label();
             label3 = new Label();
-            textBox8 = new TextBox();
+            txtHistorialMedico = new TextBox();
             label9 = new Label();
             groupBox4 = new GroupBox();
-            radioButton8 = new RadioButton();
-            radioButton9 = new RadioButton();
-            dataGridView1 = new DataGridView();
+            radioButtonNo = new RadioButton();
+            radioButtonSi = new RadioButton();
+            dgvExpediente = new DataGridView();
             linkLabel1 = new LinkLabel();
-            txtNombreP = new TextBox();
-            txtApellidoP = new TextBox();
+            txtNombrePaciente = new TextBox();
+            txtApellidoPaciente = new TextBox();
             label10 = new Label();
             label11 = new Label();
             groupBox5 = new GroupBox();
+            label12 = new Label();
+            label13 = new Label();
+            txtPacienteID = new TextBox();
             pnlTitulo.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpediente).BeginInit();
             groupBox5.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,7 +90,7 @@
             pnlTitulo.Controls.Add(label1);
             pnlTitulo.Location = new Point(12, 12);
             pnlTitulo.Name = "pnlTitulo";
-            pnlTitulo.Size = new Size(368, 57);
+            pnlTitulo.Size = new Size(333, 57);
             pnlTitulo.TabIndex = 21;
             // 
             // label1
@@ -95,42 +98,43 @@
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(42, 13);
+            label1.Location = new Point(22, 13);
             label1.Name = "label1";
             label1.Size = new Size(280, 33);
             label1.TabIndex = 0;
             label1.Text = "Registro de Expediente";
             // 
-            // button2
+            // btnEditar
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.DodgerBlue;
-            button2.Font = new Font("Times New Roman", 15F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(1137, 386);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 61);
-            button2.TabIndex = 20;
-            button2.Text = "EDITAR";
-            button2.UseVisualStyleBackColor = false;
+            btnEditar.Anchor = AnchorStyles.None;
+            btnEditar.BackColor = Color.DodgerBlue;
+            btnEditar.Font = new Font("Times New Roman", 15F);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(1137, 386);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(203, 61);
+            btnEditar.TabIndex = 20;
+            btnEditar.Text = "EDITAR";
+            btnEditar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnAgregar
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.DarkGreen;
-            button1.Font = new Font("Times New Roman", 15F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(928, 386);
-            button1.Name = "button1";
-            button1.Size = new Size(203, 61);
-            button1.TabIndex = 19;
-            button1.Text = "AGREGAR";
-            button1.UseVisualStyleBackColor = false;
+            btnAgregar.Anchor = AnchorStyles.None;
+            btnAgregar.BackColor = Color.DarkGreen;
+            btnAgregar.Font = new Font("Times New Roman", 15F);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(928, 386);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(203, 61);
+            btnAgregar.TabIndex = 19;
+            btnAgregar.Text = "AGREGAR";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.None;
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cmbBiotipoCutaneo);
             groupBox1.Font = new Font("Times New Roman", 11.25F);
             groupBox1.Location = new Point(588, 25);
             groupBox1.Name = "groupBox1";
@@ -139,25 +143,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "BIOTIPO CUTANEO";
             // 
-            // comboBox1
+            // cmbBiotipoCutaneo
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(94, 32);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(204, 25);
-            comboBox1.TabIndex = 0;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            cmbBiotipoCutaneo.FormattingEnabled = true;
+            cmbBiotipoCutaneo.Location = new Point(94, 32);
+            cmbBiotipoCutaneo.Name = "cmbBiotipoCutaneo";
+            cmbBiotipoCutaneo.Size = new Size(204, 25);
+            cmbBiotipoCutaneo.TabIndex = 0;
             // 
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.None;
-            groupBox2.Controls.Add(checkBox7);
-            groupBox2.Controls.Add(checkBox6);
-            groupBox2.Controls.Add(checkBox5);
-            groupBox2.Controls.Add(checkBox4);
-            groupBox2.Controls.Add(checkBox3);
-            groupBox2.Controls.Add(checkBox2);
-            groupBox2.Controls.Add(checkBox1);
+            groupBox2.Controls.Add(checkBoxNinguno);
+            groupBox2.Controls.Add(checkBoxProtectorSolar);
+            groupBox2.Controls.Add(checkBoxTonico);
+            groupBox2.Controls.Add(checkBoxAceites);
+            groupBox2.Controls.Add(checkBoxSerum);
+            groupBox2.Controls.Add(checkBoxCremas);
+            groupBox2.Controls.Add(checkBoxJabonFacial);
             groupBox2.Font = new Font("Times New Roman", 11.25F);
             groupBox2.Location = new Point(967, 129);
             groupBox2.Name = "groupBox2";
@@ -166,90 +169,90 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "CUIDADOS DE PIEL";
             // 
-            // checkBox7
+            // checkBoxNinguno
             // 
-            checkBox7.AutoSize = true;
-            checkBox7.Location = new Point(207, 93);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(76, 21);
-            checkBox7.TabIndex = 32;
-            checkBox7.Text = "Ninguno";
-            checkBox7.UseVisualStyleBackColor = true;
+            checkBoxNinguno.AutoSize = true;
+            checkBoxNinguno.Location = new Point(207, 93);
+            checkBoxNinguno.Name = "checkBoxNinguno";
+            checkBoxNinguno.Size = new Size(76, 21);
+            checkBoxNinguno.TabIndex = 32;
+            checkBoxNinguno.Text = "Ninguno";
+            checkBoxNinguno.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // checkBoxProtectorSolar
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(207, 66);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(116, 21);
-            checkBox6.TabIndex = 32;
-            checkBox6.Text = "Protector Solar";
-            checkBox6.UseVisualStyleBackColor = true;
+            checkBoxProtectorSolar.AutoSize = true;
+            checkBoxProtectorSolar.Location = new Point(207, 66);
+            checkBoxProtectorSolar.Name = "checkBoxProtectorSolar";
+            checkBoxProtectorSolar.Size = new Size(116, 21);
+            checkBoxProtectorSolar.TabIndex = 32;
+            checkBoxProtectorSolar.Text = "Protector Solar";
+            checkBoxProtectorSolar.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBoxTonico
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(207, 39);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(66, 21);
-            checkBox5.TabIndex = 32;
-            checkBox5.Text = "Tonico";
-            checkBox5.UseVisualStyleBackColor = true;
+            checkBoxTonico.AutoSize = true;
+            checkBoxTonico.Location = new Point(207, 39);
+            checkBoxTonico.Name = "checkBoxTonico";
+            checkBoxTonico.Size = new Size(66, 21);
+            checkBoxTonico.TabIndex = 32;
+            checkBoxTonico.Text = "Tonico";
+            checkBoxTonico.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxAceites
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(25, 120);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(72, 21);
-            checkBox4.TabIndex = 32;
-            checkBox4.Text = "Aceites";
-            checkBox4.UseVisualStyleBackColor = true;
+            checkBoxAceites.AutoSize = true;
+            checkBoxAceites.Location = new Point(25, 120);
+            checkBoxAceites.Name = "checkBoxAceites";
+            checkBoxAceites.Size = new Size(72, 21);
+            checkBoxAceites.TabIndex = 32;
+            checkBoxAceites.Text = "Aceites";
+            checkBoxAceites.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxSerum
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(25, 93);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(65, 21);
-            checkBox3.TabIndex = 32;
-            checkBox3.Text = "Serum";
-            checkBox3.UseVisualStyleBackColor = true;
+            checkBoxSerum.AutoSize = true;
+            checkBoxSerum.Location = new Point(25, 93);
+            checkBoxSerum.Name = "checkBoxSerum";
+            checkBoxSerum.Size = new Size(65, 21);
+            checkBoxSerum.TabIndex = 32;
+            checkBoxSerum.Text = "Serum";
+            checkBoxSerum.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxCremas
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(25, 66);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(73, 21);
-            checkBox2.TabIndex = 32;
-            checkBox2.Text = "Cremas";
-            checkBox2.UseVisualStyleBackColor = true;
+            checkBoxCremas.AutoSize = true;
+            checkBoxCremas.Location = new Point(25, 66);
+            checkBoxCremas.Name = "checkBoxCremas";
+            checkBoxCremas.Size = new Size(73, 21);
+            checkBoxCremas.TabIndex = 32;
+            checkBoxCremas.Text = "Cremas";
+            checkBoxCremas.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxJabonFacial
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(25, 39);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(100, 21);
-            checkBox1.TabIndex = 32;
-            checkBox1.Text = "Jabón Facial";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBoxJabonFacial.AutoSize = true;
+            checkBoxJabonFacial.Location = new Point(25, 39);
+            checkBoxJabonFacial.Name = "checkBoxJabonFacial";
+            checkBoxJabonFacial.Size = new Size(100, 21);
+            checkBoxJabonFacial.TabIndex = 32;
+            checkBoxJabonFacial.Text = "Jabón Facial";
+            checkBoxJabonFacial.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.None;
             groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(textBox1);
-            groupBox3.Controls.Add(textBox4);
+            groupBox3.Controls.Add(txtVasosAgua);
+            groupBox3.Controls.Add(txtTrasnoche);
             groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(textBox5);
+            groupBox3.Controls.Add(txtConsumoMedicamento);
+            groupBox3.Controls.Add(txtConsumoCafe);
             groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(textBox2);
-            groupBox3.Controls.Add(textBox6);
+            groupBox3.Controls.Add(txtConsumoTabaco);
+            groupBox3.Controls.Add(txtConsumoSuplementos);
             groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(textBox7);
+            groupBox3.Controls.Add(txtConsumoLicor);
             groupBox3.Controls.Add(label2);
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(label3);
@@ -270,19 +273,19 @@
             label8.TabIndex = 60;
             label8.Text = "Consumo Licor";
             // 
-            // textBox1
+            // txtVasosAgua
             // 
-            textBox1.Location = new Point(173, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 25);
-            textBox1.TabIndex = 47;
+            txtVasosAgua.Location = new Point(173, 31);
+            txtVasosAgua.Name = "txtVasosAgua";
+            txtVasosAgua.Size = new Size(177, 25);
+            txtVasosAgua.TabIndex = 47;
             // 
-            // textBox4
+            // txtTrasnoche
             // 
-            textBox4.Location = new Point(511, 31);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(177, 25);
-            textBox4.TabIndex = 50;
+            txtTrasnoche.Location = new Point(511, 31);
+            txtTrasnoche.Name = "txtTrasnoche";
+            txtTrasnoche.Size = new Size(177, 25);
+            txtTrasnoche.TabIndex = 50;
             // 
             // label7
             // 
@@ -293,19 +296,19 @@
             label7.TabIndex = 59;
             label7.Text = "Consumo Suplementos";
             // 
-            // textBox3
+            // txtConsumoMedicamento
             // 
-            textBox3.Location = new Point(173, 143);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(177, 25);
-            textBox3.TabIndex = 49;
+            txtConsumoMedicamento.Location = new Point(173, 143);
+            txtConsumoMedicamento.Name = "txtConsumoMedicamento";
+            txtConsumoMedicamento.Size = new Size(177, 25);
+            txtConsumoMedicamento.TabIndex = 49;
             // 
-            // textBox5
+            // txtConsumoCafe
             // 
-            textBox5.Location = new Point(510, 87);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(177, 25);
-            textBox5.TabIndex = 51;
+            txtConsumoCafe.Location = new Point(510, 87);
+            txtConsumoCafe.Name = "txtConsumoCafe";
+            txtConsumoCafe.Size = new Size(177, 25);
+            txtConsumoCafe.TabIndex = 51;
             // 
             // label6
             // 
@@ -316,19 +319,19 @@
             label6.TabIndex = 58;
             label6.Text = "Consumo Cafe";
             // 
-            // textBox2
+            // txtConsumoTabaco
             // 
-            textBox2.Location = new Point(173, 87);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 25);
-            textBox2.TabIndex = 48;
+            txtConsumoTabaco.Location = new Point(173, 87);
+            txtConsumoTabaco.Name = "txtConsumoTabaco";
+            txtConsumoTabaco.Size = new Size(177, 25);
+            txtConsumoTabaco.TabIndex = 48;
             // 
-            // textBox6
+            // txtConsumoSuplementos
             // 
-            textBox6.Location = new Point(511, 143);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(177, 25);
-            textBox6.TabIndex = 52;
+            txtConsumoSuplementos.Location = new Point(511, 143);
+            txtConsumoSuplementos.Name = "txtConsumoSuplementos";
+            txtConsumoSuplementos.Size = new Size(177, 25);
+            txtConsumoSuplementos.TabIndex = 52;
             // 
             // label5
             // 
@@ -339,12 +342,12 @@
             label5.TabIndex = 57;
             label5.Text = "Trasnoche";
             // 
-            // textBox7
+            // txtConsumoLicor
             // 
-            textBox7.Location = new Point(794, 87);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(137, 25);
-            textBox7.TabIndex = 53;
+            txtConsumoLicor.Location = new Point(794, 87);
+            txtConsumoLicor.Name = "txtConsumoLicor";
+            txtConsumoLicor.Size = new Size(137, 25);
+            txtConsumoLicor.TabIndex = 53;
             // 
             // label2
             // 
@@ -373,15 +376,15 @@
             label3.TabIndex = 55;
             label3.Text = "Consumo Medicamento";
             // 
-            // textBox8
+            // txtHistorialMedico
             // 
-            textBox8.Anchor = AnchorStyles.None;
-            textBox8.Font = new Font("Times New Roman", 11.25F);
-            textBox8.Location = new Point(523, 327);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(332, 122);
-            textBox8.TabIndex = 61;
+            txtHistorialMedico.Anchor = AnchorStyles.None;
+            txtHistorialMedico.Font = new Font("Times New Roman", 11.25F);
+            txtHistorialMedico.Location = new Point(523, 327);
+            txtHistorialMedico.Multiline = true;
+            txtHistorialMedico.Name = "txtHistorialMedico";
+            txtHistorialMedico.Size = new Size(332, 122);
+            txtHistorialMedico.TabIndex = 61;
             // 
             // label9
             // 
@@ -397,8 +400,8 @@
             // groupBox4
             // 
             groupBox4.Anchor = AnchorStyles.None;
-            groupBox4.Controls.Add(radioButton8);
-            groupBox4.Controls.Add(radioButton9);
+            groupBox4.Controls.Add(radioButtonNo);
+            groupBox4.Controls.Add(radioButtonSi);
             groupBox4.Font = new Font("Times New Roman", 11.25F);
             groupBox4.Location = new Point(967, 25);
             groupBox4.Name = "groupBox4";
@@ -407,55 +410,55 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "USO DE MARCAPASOS";
             // 
-            // radioButton8
+            // radioButtonNo
             // 
-            radioButton8.AutoSize = true;
-            radioButton8.Location = new Point(207, 45);
-            radioButton8.Name = "radioButton8";
-            radioButton8.Size = new Size(44, 21);
-            radioButton8.TabIndex = 28;
-            radioButton8.TabStop = true;
-            radioButton8.Text = "No";
-            radioButton8.UseVisualStyleBackColor = true;
+            radioButtonNo.AutoSize = true;
+            radioButtonNo.Location = new Point(207, 45);
+            radioButtonNo.Name = "radioButtonNo";
+            radioButtonNo.Size = new Size(44, 21);
+            radioButtonNo.TabIndex = 28;
+            radioButtonNo.TabStop = true;
+            radioButtonNo.Text = "No";
+            radioButtonNo.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // radioButtonSi
             // 
-            radioButton9.AutoSize = true;
-            radioButton9.Location = new Point(77, 45);
-            radioButton9.Name = "radioButton9";
-            radioButton9.Size = new Size(37, 21);
-            radioButton9.TabIndex = 25;
-            radioButton9.TabStop = true;
-            radioButton9.Text = "Si";
-            radioButton9.UseVisualStyleBackColor = true;
+            radioButtonSi.AutoSize = true;
+            radioButtonSi.Location = new Point(77, 45);
+            radioButtonSi.Name = "radioButtonSi";
+            radioButtonSi.Size = new Size(37, 21);
+            radioButtonSi.TabIndex = 25;
+            radioButtonSi.TabStop = true;
+            radioButtonSi.Text = "Si";
+            radioButtonSi.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvExpediente
             // 
-            dataGridView1.Anchor = AnchorStyles.None;
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(0, 492);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView1.Size = new Size(1386, 238);
-            dataGridView1.TabIndex = 62;
+            dgvExpediente.Anchor = AnchorStyles.None;
+            dgvExpediente.BackgroundColor = SystemColors.Control;
+            dgvExpediente.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvExpediente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvExpediente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpediente.EnableHeadersVisualStyles = false;
+            dgvExpediente.Location = new Point(0, 492);
+            dgvExpediente.Name = "dgvExpediente";
+            dgvExpediente.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dgvExpediente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvExpediente.Size = new Size(1386, 238);
+            dgvExpediente.TabIndex = 62;
             // 
             // linkLabel1
             // 
@@ -469,19 +472,19 @@
             linkLabel1.Text = "Seleccione al paciente para llenar su expediente";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // txtNombreP
+            // txtNombrePaciente
             // 
-            txtNombreP.Location = new Point(112, 24);
-            txtNombreP.Name = "txtNombreP";
-            txtNombreP.Size = new Size(177, 25);
-            txtNombreP.TabIndex = 61;
+            txtNombrePaciente.Location = new Point(112, 24);
+            txtNombrePaciente.Name = "txtNombrePaciente";
+            txtNombrePaciente.Size = new Size(177, 25);
+            txtNombrePaciente.TabIndex = 61;
             // 
-            // txtApellidoP
+            // txtApellidoPaciente
             // 
-            txtApellidoP.Location = new Point(112, 84);
-            txtApellidoP.Name = "txtApellidoP";
-            txtApellidoP.Size = new Size(177, 25);
-            txtApellidoP.TabIndex = 62;
+            txtApellidoPaciente.Location = new Point(112, 84);
+            txtApellidoPaciente.Name = "txtApellidoPaciente";
+            txtApellidoPaciente.Size = new Size(177, 25);
+            txtApellidoPaciente.TabIndex = 62;
             // 
             // label10
             // 
@@ -503,8 +506,8 @@
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(txtNombreP);
-            groupBox5.Controls.Add(txtApellidoP);
+            groupBox5.Controls.Add(txtNombrePaciente);
+            groupBox5.Controls.Add(txtApellidoPaciente);
             groupBox5.Controls.Add(label10);
             groupBox5.Controls.Add(label11);
             groupBox5.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -515,23 +518,50 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "PACIENTE";
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(34, 94);
+            label12.Name = "label12";
+            label12.Size = new Size(0, 15);
+            label12.TabIndex = 61;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(322, 94);
+            label13.Name = "label13";
+            label13.Size = new Size(0, 15);
+            label13.TabIndex = 66;
+            // 
+            // txtPacienteID
+            // 
+            txtPacienteID.Location = new Point(185, 91);
+            txtPacienteID.Name = "txtPacienteID";
+            txtPacienteID.Size = new Size(85, 23);
+            txtPacienteID.TabIndex = 67;
+            txtPacienteID.Visible = false;
+            // 
             // frmExpediente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1386, 730);
+            Controls.Add(txtPacienteID);
+            Controls.Add(label13);
+            Controls.Add(label12);
             Controls.Add(groupBox5);
             Controls.Add(linkLabel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvExpediente);
             Controls.Add(groupBox4);
             Controls.Add(label9);
-            Controls.Add(textBox8);
+            Controls.Add(txtHistorialMedico);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(pnlTitulo);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnEditar);
+            Controls.Add(btnAgregar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmExpediente";
             Text = "frmExpediente";
@@ -545,7 +575,7 @@
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpediente).EndInit();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
             ResumeLayout(false);
@@ -556,44 +586,47 @@
 
         private Panel pnlTitulo;
         private Label label1;
-        private Button button2;
-        private Button button1;
+        private Button btnEditar;
+        private Button btnAgregar;
         private GroupBox groupBox1;
-        private ComboBox comboBox1;
+        private ComboBox cmbBiotipoCutaneo;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox4;
+        private TextBox txtVasosAgua;
+        private TextBox txtTrasnoche;
         private Label label7;
-        private TextBox textBox3;
-        private TextBox textBox5;
+        private TextBox txtConsumoMedicamento;
+        private TextBox txtConsumoCafe;
         private Label label6;
-        private TextBox textBox2;
-        private TextBox textBox6;
+        private TextBox txtConsumoTabaco;
+        private TextBox txtConsumoSuplementos;
         private Label label5;
-        private TextBox textBox7;
+        private TextBox txtConsumoLicor;
         private Label label2;
         private Label label4;
         private Label label3;
-        private TextBox textBox8;
+        private TextBox txtHistorialMedico;
         private Label label9;
         private GroupBox groupBox4;
-        private RadioButton radioButton8;
-        private RadioButton radioButton9;
-        private CheckBox checkBox7;
-        private CheckBox checkBox6;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
-        private DataGridView dataGridView1;
+        private RadioButton radioButtonNo;
+        private RadioButton radioButtonSi;
+        private CheckBox checkBoxNinguno;
+        private CheckBox checkBoxProtectorSolar;
+        private CheckBox checkBoxTonico;
+        private CheckBox checkBoxAceites;
+        private CheckBox checkBoxSerum;
+        private CheckBox checkBoxCremas;
+        private CheckBox checkBoxJabonFacial;
+        private DataGridView dgvExpediente;
         private LinkLabel linkLabel1;
-        private TextBox txtNombreP;
-        private TextBox txtApellidoP;
+        private TextBox txtNombrePaciente;
+        private TextBox txtApellidoPaciente;
         private Label label10;
         private Label label11;
         private GroupBox groupBox5;
+        private Label label12;
+        private Label label13;
+        private TextBox txtPacienteID;
     }
 }

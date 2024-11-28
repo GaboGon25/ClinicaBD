@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistrosPacientes));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             frmLetrero = new Panel();
             pbxCerrar = new PictureBox();
             pnlTitulo = new Panel();
@@ -93,28 +93,29 @@
             dgvPacientes.Anchor = AnchorStyles.None;
             dgvPacientes.BackgroundColor = SystemColors.Control;
             dgvPacientes.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvPacientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPacientes.EnableHeadersVisualStyles = false;
-            dgvPacientes.Location = new Point(287, 143);
+            dgvPacientes.Location = new Point(250, 138);
             dgvPacientes.Name = "dgvPacientes";
             dgvPacientes.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dgvPacientes.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            dgvPacientes.Size = new Size(168, 168);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dgvPacientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPacientes.Size = new Size(202, 197);
             dgvPacientes.TabIndex = 19;
+            dgvPacientes.CellClick += dgvPacientes_CellClick;
             // 
             // label2
             // 
@@ -137,6 +138,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmRegistrosPacientes";
             Text = "frmRegistrosPacientes";
+            Load += frmRegistrosPacientes_Load;
             frmLetrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxCerrar).EndInit();
             pnlTitulo.ResumeLayout(false);
