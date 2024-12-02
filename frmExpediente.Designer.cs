@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pnlTitulo = new Panel();
             label1 = new Label();
             btnEditar = new Button();
@@ -74,6 +74,7 @@
             label12 = new Label();
             label13 = new Label();
             txtPacienteID = new TextBox();
+            txtExpedienteID = new TextBox();
             pnlTitulo.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -116,6 +117,7 @@
             btnEditar.TabIndex = 20;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAgregar
             // 
@@ -437,28 +439,29 @@
             dgvExpediente.Anchor = AnchorStyles.None;
             dgvExpediente.BackgroundColor = SystemColors.Control;
             dgvExpediente.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvExpediente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvExpediente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvExpediente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExpediente.EnableHeadersVisualStyles = false;
             dgvExpediente.Location = new Point(0, 492);
             dgvExpediente.Name = "dgvExpediente";
             dgvExpediente.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvExpediente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dgvExpediente.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvExpediente.Size = new Size(1386, 238);
             dgvExpediente.TabIndex = 62;
+            dgvExpediente.CellClick += dgvExpediente_CellClick;
             // 
             // linkLabel1
             // 
@@ -542,11 +545,20 @@
             txtPacienteID.TabIndex = 67;
             txtPacienteID.Visible = false;
             // 
+            // txtExpedienteID
+            // 
+            txtExpedienteID.Location = new Point(354, 44);
+            txtExpedienteID.Name = "txtExpedienteID";
+            txtExpedienteID.Size = new Size(46, 23);
+            txtExpedienteID.TabIndex = 68;
+            txtExpedienteID.Visible = false;
+            // 
             // frmExpediente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1386, 730);
+            Controls.Add(txtExpedienteID);
             Controls.Add(txtPacienteID);
             Controls.Add(label13);
             Controls.Add(label12);
@@ -628,5 +640,6 @@
         private Label label12;
         private Label label13;
         private TextBox txtPacienteID;
+        private TextBox txtExpedienteID;
     }
 }

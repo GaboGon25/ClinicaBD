@@ -71,6 +71,10 @@ namespace ClinicaBD
                 {
                     formExpediente.SetPacienteSeleccionado(pacienteID,nombre, apellido);
                 }
+                else if (this.Owner is frmCitas formCitas)
+                {
+                    formCitas.SetPacienteSeleccionado(pacienteID, nombre, apellido);
+                }
                 this.Close();
             }
         }
