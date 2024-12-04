@@ -284,25 +284,25 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
                     connection.Open();
                     using (SqlTransaction transaction = connection.BeginTransaction())
                     {
-                        // Actualizar los valores del expediente (esto puede incluir otros campos)
+                        // Actualizar los valores del expediente
                         SqlCommand cmdActualizarExpediente = new SqlCommand(
                             "UPDATE Expediente SET Historial_Medico = @Historial_Medico, UsoMarcapasos = @UsoMarcapasos " +
                             "WHERE ExpedienteID = @ExpedienteID", connection, transaction);
                         cmdActualizarExpediente.Parameters.AddWithValue("@Historial_Medico", txtHistorialMedico.Text);
-                        cmdActualizarExpediente.Parameters.AddWithValue("@UsoMarcapasos", radioButtonSi.Checked ?  1:0);
+                        cmdActualizarExpediente.Parameters.AddWithValue("@UsoMarcapasos", radioButtonSi.Checked ? 1 : 0);
                         cmdActualizarExpediente.Parameters.AddWithValue("@ExpedienteID", expedienteID);
                         cmdActualizarExpediente.ExecuteNonQuery();
 
                         // Actualizar los hábitos
                         string[] habitos = {
-                    txtVasosAgua.Text,
-                    txtConsumoTabaco.Text,
-                    txtConsumoMedicamento.Text,
-                    txtTrasnoche.Text,
-                    txtConsumoCafe.Text,
-                    txtConsumoSuplementos.Text,
-                    txtConsumoLicor.Text
-                };
+            txtVasosAgua.Text,
+            txtConsumoTabaco.Text,
+            txtConsumoMedicamento.Text,
+            txtTrasnoche.Text,
+            txtConsumoCafe.Text,
+            txtConsumoSuplementos.Text,
+            txtConsumoLicor.Text
+        };
 
                         for (int i = 0; i < habitos.Length; i++)
                         {
@@ -325,26 +325,41 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
 
                         // Actualizar los cuidados de piel
                         CheckBox[] cuidados = {
-                    checkBoxJabonFacial, checkBoxCremas, checkBoxSerum,
-                    checkBoxAceites, checkBoxTonico, checkBoxProtectorSolar, checkBoxNinguno
-                };
+            checkBoxJabonFacial, checkBoxCremas, checkBoxSerum,
+            checkBoxAceites, checkBoxTonico, checkBoxProtectorSolar, checkBoxNinguno
+        };
 
-                        for (int i = 0; i < cuidados.Length; i++)
+                        try
                         {
-                            if (cuidados[i].Checked)
+                            // Eliminar los registros anteriores de cuidados de piel para el expediente
+                            SqlCommand cmdEliminarCuidados = new SqlCommand(
+                                "DELETE FROM CuidadoPiel_Expediente WHERE ExpedienteID = @ExpedienteID", connection, transaction);
+                            cmdEliminarCuidados.Parameters.AddWithValue("@ExpedienteID", expedienteID);
+                            cmdEliminarCuidados.ExecuteNonQuery();
+
+                            // Insertar los nuevos cuidados de piel seleccionados
+                            for (int i = 0; i < cuidados.Length; i++)
                             {
-                                SqlCommand cmdActualizarCuidadosPiel = new SqlCommand(
-                                    "IF EXISTS (SELECT 1 FROM CuidadoPiel_Expediente WHERE ExpedienteID = @ExpedienteID AND CuidadosPielID = @CuidadosPielID) " +
-                                    "UPDATE CuidadoPiel_Expediente SET CuidadosPielID = @CuidadosPielID WHERE ExpedienteID = @ExpedienteID " +
-                                    "ELSE " +
-                                    "INSERT INTO CuidadoPiel_Expediente (ExpedienteID, CuidadosPielID) VALUES (@ExpedienteID, @CuidadosPielID)",
-                                    connection, transaction);
+                                if (cuidados[i].Checked)
+                                {
+                                    // Insertar solo los cuidados seleccionados
+                                    SqlCommand cmdActualizarCuidadosPiel = new SqlCommand(
+                                        "IF NOT EXISTS (SELECT 1 FROM CuidadoPiel_Expediente WHERE ExpedienteID = @ExpedienteID AND CuidadosPielID = @CuidadosPielID) " +
+                                        "INSERT INTO CuidadoPiel_Expediente (ExpedienteID, CuidadosPielID) VALUES (@ExpedienteID, @CuidadosPielID)",
+                                        connection, transaction);
 
-                                cmdActualizarCuidadosPiel.Parameters.AddWithValue("@ExpedienteID", expedienteID);
-                                cmdActualizarCuidadosPiel.Parameters.AddWithValue("@CuidadosPielID", i + 1); // IDs de cuidados predefinidos
+                                    cmdActualizarCuidadosPiel.Parameters.AddWithValue("@ExpedienteID", expedienteID);
+                                    cmdActualizarCuidadosPiel.Parameters.AddWithValue("@CuidadosPielID", i + 1); // IDs de cuidados predefinidos
 
-                                cmdActualizarCuidadosPiel.ExecuteNonQuery();
+                                    cmdActualizarCuidadosPiel.ExecuteNonQuery();
+                                }
                             }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al actualizar los cuidados de piel: " + ex.Message);
+                            transaction.Rollback();
+                            return;
                         }
 
                         // Si todo fue bien, confirma la transacción
@@ -358,6 +373,7 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
             {
                 MessageBox.Show("Error al actualizar el expediente: " + ex.Message);
             }
+
         }
 
         private void dgvExpediente_CellClick(object sender, DataGridViewCellEventArgs e)
