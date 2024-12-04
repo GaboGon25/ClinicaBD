@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPagos));
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             txtTotalDescuento = new TextBox();
@@ -286,7 +287,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(60, 12);
+            label1.Location = new Point(50, 12);
             label1.Name = "label1";
             label1.Size = new Size(217, 33);
             label1.TabIndex = 0;
@@ -298,6 +299,8 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.Font = new Font("Segoe UI", 15F);
             btnEditar.ForeColor = Color.White;
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditar.Location = new Point(699, 424);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(203, 61);
@@ -312,6 +315,8 @@
             btnAgregar.BackColor = Color.DarkGreen;
             btnAgregar.Font = new Font("Segoe UI", 15F);
             btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
             btnAgregar.Location = new Point(460, 424);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(203, 61);
@@ -325,26 +330,26 @@
             dgvPago.Anchor = AnchorStyles.None;
             dgvPago.BackgroundColor = SystemColors.Control;
             dgvPago.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(82, 116, 21);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(82, 116, 21);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvPago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPago.EnableHeadersVisualStyles = false;
             dgvPago.Location = new Point(376, 503);
             dgvPago.Name = "dgvPago";
             dgvPago.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(124, 175, 70);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dgvPago.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(124, 175, 70);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dgvPago.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvPago.Size = new Size(599, 227);
             dgvPago.TabIndex = 28;
             dgvPago.CellClick += dgvPago_CellClick;

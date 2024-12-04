@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExpediente));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pnlTitulo = new Panel();
@@ -99,7 +100,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(22, 13);
+            label1.Location = new Point(30, 11);
             label1.Name = "label1";
             label1.Size = new Size(280, 33);
             label1.TabIndex = 0;
@@ -111,6 +112,8 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.Font = new Font("Times New Roman", 15F);
             btnEditar.ForeColor = Color.White;
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditar.Location = new Point(1137, 386);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(203, 61);
@@ -125,6 +128,8 @@
             btnAgregar.BackColor = Color.DarkGreen;
             btnAgregar.Font = new Font("Times New Roman", 15F);
             btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
             btnAgregar.Location = new Point(928, 386);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(203, 61);
@@ -138,7 +143,7 @@
             groupBox1.Anchor = AnchorStyles.None;
             groupBox1.Controls.Add(cmbBiotipoCutaneo);
             groupBox1.Font = new Font("Times New Roman", 11.25F);
-            groupBox1.Location = new Point(588, 25);
+            groupBox1.Location = new Point(588, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(373, 95);
             groupBox1.TabIndex = 22;
@@ -164,7 +169,7 @@
             groupBox2.Controls.Add(checkBoxCremas);
             groupBox2.Controls.Add(checkBoxJabonFacial);
             groupBox2.Font = new Font("Times New Roman", 11.25F);
-            groupBox2.Location = new Point(967, 129);
+            groupBox2.Location = new Point(967, 120);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(373, 192);
             groupBox2.TabIndex = 32;
@@ -259,7 +264,7 @@
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(label3);
             groupBox3.Font = new Font("Times New Roman", 11.25F);
-            groupBox3.Location = new Point(12, 129);
+            groupBox3.Location = new Point(12, 120);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(949, 192);
             groupBox3.TabIndex = 33;
@@ -382,7 +387,7 @@
             // 
             txtHistorialMedico.Anchor = AnchorStyles.None;
             txtHistorialMedico.Font = new Font("Times New Roman", 11.25F);
-            txtHistorialMedico.Location = new Point(523, 327);
+            txtHistorialMedico.Location = new Point(523, 318);
             txtHistorialMedico.Multiline = true;
             txtHistorialMedico.Name = "txtHistorialMedico";
             txtHistorialMedico.Size = new Size(332, 122);
@@ -393,7 +398,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(412, 328);
+            label9.Location = new Point(412, 319);
             label9.Name = "label9";
             label9.Size = new Size(105, 19);
             label9.TabIndex = 61;
@@ -405,7 +410,7 @@
             groupBox4.Controls.Add(radioButtonNo);
             groupBox4.Controls.Add(radioButtonSi);
             groupBox4.Font = new Font("Times New Roman", 11.25F);
-            groupBox4.Location = new Point(967, 25);
+            groupBox4.Location = new Point(967, 14);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(373, 95);
             groupBox4.TabIndex = 33;
@@ -467,7 +472,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.Location = new Point(12, 466);
+            linkLabel1.Location = new Point(12, 458);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(295, 19);
             linkLabel1.TabIndex = 63;
@@ -514,7 +519,7 @@
             groupBox5.Controls.Add(label10);
             groupBox5.Controls.Add(label11);
             groupBox5.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox5.Location = new Point(12, 327);
+            groupBox5.Location = new Point(12, 319);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(344, 136);
             groupBox5.TabIndex = 65;

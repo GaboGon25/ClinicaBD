@@ -144,7 +144,7 @@
             panel4.Location = new Point(2, 482);
             panel4.Margin = new Padding(2, 1, 2, 1);
             panel4.Name = "panel4";
-            panel4.Size = new Size(12, 46);
+            panel4.Size = new Size(10, 46);
             panel4.TabIndex = 7;
             // 
             // btnPagos
@@ -153,8 +153,10 @@
             btnPagos.FlatAppearance.BorderSize = 0;
             btnPagos.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnPagos.FlatStyle = FlatStyle.Flat;
-            btnPagos.Font = new Font("Century Gothic", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPagos.Font = new Font("Century Schoolbook", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPagos.ForeColor = SystemColors.ControlLightLight;
+            btnPagos.Image = (Image)resources.GetObject("btnPagos.Image");
+            btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
             btnPagos.Location = new Point(2, 482);
             btnPagos.Margin = new Padding(2, 1, 2, 1);
             btnPagos.Name = "btnPagos";
@@ -170,7 +172,7 @@
             panel3.Location = new Point(0, 381);
             panel3.Margin = new Padding(2, 1, 2, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(14, 46);
+            panel3.Size = new Size(12, 46);
             panel3.TabIndex = 5;
             // 
             // panel2
@@ -190,6 +192,8 @@
             btnCitas.FlatStyle = FlatStyle.Flat;
             btnCitas.Font = new Font("Century Schoolbook", 11.25F);
             btnCitas.ForeColor = SystemColors.ControlLightLight;
+            btnCitas.Image = (Image)resources.GetObject("btnCitas.Image");
+            btnCitas.ImageAlign = ContentAlignment.MiddleLeft;
             btnCitas.Location = new Point(0, 381);
             btnCitas.Margin = new Padding(2, 1, 2, 1);
             btnCitas.Name = "btnCitas";
@@ -216,6 +220,8 @@
             btnExpediente.FlatStyle = FlatStyle.Flat;
             btnExpediente.Font = new Font("Century Schoolbook", 11.25F);
             btnExpediente.ForeColor = SystemColors.ControlLightLight;
+            btnExpediente.Image = (Image)resources.GetObject("btnExpediente.Image");
+            btnExpediente.ImageAlign = ContentAlignment.MiddleLeft;
             btnExpediente.Location = new Point(2, 272);
             btnExpediente.Margin = new Padding(2, 1, 2, 1);
             btnExpediente.Name = "btnExpediente";
@@ -233,6 +239,8 @@
             btnPacientes.FlatStyle = FlatStyle.Flat;
             btnPacientes.Font = new Font("Century Schoolbook", 11.25F);
             btnPacientes.ForeColor = SystemColors.ControlLightLight;
+            btnPacientes.Image = (Image)resources.GetObject("btnPacientes.Image");
+            btnPacientes.ImageAlign = ContentAlignment.MiddleLeft;
             btnPacientes.Location = new Point(2, 177);
             btnPacientes.Margin = new Padding(2, 1, 2, 1);
             btnPacientes.Name = "btnPacientes";
@@ -244,6 +252,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(8, 6);
             pictureBox1.Name = "pictureBox1";
@@ -251,6 +260,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pnlContenedor
             // 
@@ -270,8 +280,10 @@
             Controls.Add(pnlSideBar);
             Controls.Add(pnlLetrero);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCentral";
             Text = "frmCentral";
+            Load += frmCentral_Load;
             pnlLetrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxOcultar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxMinimizar).EndInit();

@@ -147,6 +147,8 @@
             btnAcceder.BackColor = Color.FromArgb(124, 175, 32);
             btnAcceder.Font = new Font("Bahnschrift Condensed", 20F);
             btnAcceder.ForeColor = SystemColors.ButtonHighlight;
+            btnAcceder.Image = (Image)resources.GetObject("btnAcceder.Image");
+            btnAcceder.ImageAlign = ContentAlignment.MiddleLeft;
             btnAcceder.Location = new Point(492, 338);
             btnAcceder.Name = "btnAcceder";
             btnAcceder.Size = new Size(225, 58);
@@ -209,6 +211,7 @@
             Controls.Add(pbxImage);
             Controls.Add(frmletrero);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmLogin";
             Text = "frmLogin";
             Load += frmLogin_Load;

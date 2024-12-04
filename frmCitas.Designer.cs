@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCitas));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
@@ -273,9 +274,11 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.Font = new Font("Times New Roman", 14.25F);
             btnEditar.ForeColor = Color.White;
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditar.Location = new Point(208, 295);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(167, 61);
+            btnEditar.Size = new Size(187, 61);
             btnEditar.TabIndex = 20;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = false;
@@ -287,9 +290,11 @@
             btnAgregar.BackColor = Color.DarkGreen;
             btnAgregar.Font = new Font("Times New Roman", 14.25F);
             btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
             btnAgregar.Location = new Point(12, 295);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(167, 61);
+            btnAgregar.Size = new Size(187, 61);
             btnAgregar.TabIndex = 19;
             btnAgregar.Text = "AGREGAR";
             btnAgregar.UseVisualStyleBackColor = false;

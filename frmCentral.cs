@@ -108,5 +108,15 @@ namespace ClinicaBD
         private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AbrirFormPanel(new frmHora());
+        }
+
+        private void frmCentral_Load(object sender, EventArgs e)
+        {
+            pictureBox1_Click(null, e);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaciente));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
@@ -74,6 +75,8 @@
             btnAgregar.BackColor = Color.DarkGreen;
             btnAgregar.Font = new Font("Times New Roman", 15.75F);
             btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
             btnAgregar.Location = new Point(379, 361);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(203, 61);
@@ -88,6 +91,8 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.Font = new Font("Times New Roman", 15.75F);
             btnEditar.ForeColor = Color.White;
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditar.Location = new Point(797, 361);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(203, 61);

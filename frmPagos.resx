@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Microsoft ResX Schema 
+    Microsoft ResX Schema
 
     Version 2.0
 
@@ -48,7 +48,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
@@ -117,4 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnEditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHLSURBVFhHvZdP
+        K0RhFIdJFhaUBR9AsbTw/wMgKSzY2PgC9r6E2ElKlqMUOxtZyIKFjeQDyJr8LQk9OtN7x3HmjvOO9/LU
+        Lc15zvmdexvvzDQ0/BNAF7ALXAOnwIx1/gxgCLijmjnrFg7QXyNcOLd+4QCdwKVNDjxavzDCY58If9da
+        4kg3TAArwEbktQ6M6tCMEH4PvPywxCswIIUmoKQK9XCTE94H3CpHgqZCrQO4CK9NZw1LSq6XbROe3bnF
+        Pokx3XQVJNl6GGiPvNpMuL1zS+VJfAP4CMKercUSES7IAtWHjxJ2bC2GpHBBSXUvkBwuKLGuBQoJF5Qc
+        vUBh4YJqiFoAGKzxr6bJf8fnoZpiFzhUPXnEhwuq0V0AaPzhk034OuG+elbDWTOuX6+gmmMW6Fa+pSo8
+        9LyFesnWyqgBMQvMK1+TGy4oJ3++KyiAZeULcnfnwKR1M5SbP98VFMAssAksAiNAi3Us7nxXSMSd7wqJ
+        uPNdIRF3visk4s53hUTc+a6QiDvfFRJx5wPPQTiTs97WUwi/BzO2bL0MsK+k45zv/7+95MCSH6IZCza7
+        DNALPCnxLzgBmm12BaAHOADebWciD8Aa0GozMz4BhI9mVLgtE0IAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJzSURBVFhH1ZfJ
+        jk1RFIYLiZAgDIhnKE1QiKaSaoKBEDNP4AGYCCNdDTQpJMUjSIyqKikxkSgiFc0TKBEMxEBXGOo++eU/
+        yT7Lae45twzqG+5/rb3XXneftdbt6VmIAOuBrcBBYEPU/wvATuAa8II8b60fA2aBG8Du6N8aYDtwNxz6
+        FXgM3AGO2+5MsJmWb9yvY4BFwGnghzf8AFxx6hdHe2HtIvDZPvIdAZZE20qApcCkN/kJXAZWRbsyZOtg
+        5SsmgOXRrhDdDrhtx/fAULTpFGAA+JQEUZi5HMAFO3wENka9KfpKkiBGop4D2AR8d+oGot4WZ0J76k2U
+        P0zggSO9FLVu8ZsQ96P2F99efAHWRL1b/DCzr2NX1GUw1vT2wAzwKK6Xob19xljUJL60uC1qZdieuF6G
+        64SYjYLS8xuYywk1NA1AACeBo3Fxj/eayQk1tAmgEGCf95qKWgrwMDu0gunolwKcAN7luihwwM6TOevA
+        PAWgBiYOp4v9XnySs64hOzGuVwE8tVt/urjaj1Als75em6YBqCsC3+y2LoqvLPTlhApaBNBnl9dRk3jd
+        YpNCpKGj8jdP8UQlbkZN4maLKpcrot4tKu9JVyxuSGoUNhiNWrcAV713ecaAXrdjtc3BqLcF2J+04+o3
+        Bpx1pEpXb9SbAmzxcCPORf0fPIzeSoJonQlgOGnB4x1/4h5K5SCUOv1+K6NdGX5wo8Av76F5cFm0q8SZ
+        OJVMtnOeanYU3cT20jRByzYL/nzjsTzFPTyr3xlK6zPf7J7La1bhMlQjOp4tavHtlIHn4aCUN/5rVvyd
+        zxf+c6oGdgg4AuwF1ka7BcEfDCMsSful+7oAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
