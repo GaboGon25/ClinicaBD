@@ -104,29 +104,32 @@ namespace ClinicaBD
                     con.Open();
 
                     string query = @"
-                SELECT 
-                    CP.CitasProcedimientosID,
-                    P.Nombre AS Nombre,
-                    P.Apellido AS Apellido,
-                    Pago.Fecha AS FechaPago,
-                    STUFF(
-                        (SELECT ', ' + Proce.Titulo
-                         FROM Citas_Procedimientos CP
-                         INNER JOIN Procedimientos Proce ON CP.ProcedimientoID = Proce.ProcedimientoID
-                         WHERE CP.CitaID = C.CitaID
-                         FOR XML PATH('')), 1, 2, '') AS Procedimientos,
-                    Pago.Total AS TotalPagado
-                FROM Pago
-                INNER JOIN Citas_Procedimientos CP ON Pago.CitasProcedimientosID = CP.CitasProcedimientosID
-                INNER JOIN Citas C ON CP.CitaID = C.CitaID
-                INNER JOIN Paciente P ON C.PacienteID = P.PacienteID";
+                  SELECT 
+                CP.CitasProcedimientosID,
+                P.Nombre AS Nombre,
+                P.Apellido AS Apellido,
+                Pago.Fecha AS FechaPago,
+                STUFF(
+                    (SELECT ', ' + Proce.Titulo
+                     FROM Citas_Procedimientos CP
+                     INNER JOIN Procedimientos Proce ON CP.ProcedimientoID = Proce.ProcedimientoID
+                     WHERE CP.CitaID = C.CitaID
+                     FOR XML PATH('')), 1, 2, '') AS Procedimientos,
+                Pago.Total AS TotalPagado
+            FROM Pago
+            INNER JOIN Citas_Procedimientos CP ON Pago.CitasProcedimientosID = CP.CitasProcedimientosID
+            INNER JOIN Citas C ON CP.CitaID = C.CitaID
+            INNER JOIN Paciente P ON C.PacienteID = P.PacienteID";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
                     dgvPago.DataSource = dt;
+
+                    // Ocultar columnas innecesarias
                     dgvPago.Columns["CitasProcedimientosID"].Visible = false;
+                    //dgvPago.Columns["CitaID"].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -193,59 +196,77 @@ namespace ClinicaBD
 
                     if (descuento)
                     {
-                        if (string.IsNullOrWhiteSpace(txtTotalDescuento.Text) || !decimal.TryParse(txtTotalDescuento.Text, out totalPagar))
+                        // Validación del monto con descuento
+                        if (string.IsNullOrWhiteSpace(txtTotalDescuento.Text) ||
+                            !decimal.TryParse(txtTotalDescuento.Text, out totalPagar) ||
+                            totalPagar <= 0)
                         {
-                            MessageBox.Show("Ingrese un monto válido para el descuento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Ingrese un monto válido para el descuento mayor a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
-                        // Actualiza el costo del procedimiento con el descuento
-                        string queryActualizarCostoProcedimiento = @"
-                        UPDATE CP
-                        SET Costo_Procedimiento = @NuevoCosto
-                        FROM Citas_Procedimientos CP
-                        INNER JOIN Citas C ON CP.CitaID = C.CitaID
-                        WHERE C.PacienteID = @PacienteID AND C.Estado = 1";
+                        // Inserción directa del pago con descuento
+                        string queryPagoConDescuento = @"
+                INSERT INTO Pago (CitasProcedimientosID, Fecha, Total)
+                SELECT 
+                    MIN(CP.CitasProcedimientosID), 
+                    GETDATE(), 
+                    @TotalDescuento
+                FROM Citas_Procedimientos CP
+                INNER JOIN Citas C ON CP.CitaID = C.CitaID
+                WHERE C.PacienteID = @PacienteID AND C.Estado = 1
+                GROUP BY C.CitaID";
 
-                        SqlCommand cmdActualizarCosto = new SqlCommand(queryActualizarCostoProcedimiento, con);
-                        cmdActualizarCosto.Parameters.AddWithValue("@NuevoCosto", totalPagar);
-                        cmdActualizarCosto.Parameters.AddWithValue("@PacienteID", pacienteID);
-                        cmdActualizarCosto.ExecuteNonQuery();
+                        SqlCommand cmdPagoConDescuento = new SqlCommand(queryPagoConDescuento, con);
+                        cmdPagoConDescuento.Parameters.AddWithValue("@TotalDescuento", totalPagar);
+                        cmdPagoConDescuento.Parameters.AddWithValue("@PacienteID", pacienteID);
+
+                        int filasInsertadas = cmdPagoConDescuento.ExecuteNonQuery();
+
+                        if (filasInsertadas == 0)
+                        {
+                            MessageBox.Show("No se pudo registrar el pago con descuento. Verifica los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
                     else
                     {
-                        totalPagar = Convert.ToDecimal(txtTotal.Text);
+                        // Inserción del pago calculado automáticamente sin descuento
+                        string queryPagoSinDescuento = @"
+                INSERT INTO Pago (CitasProcedimientosID, Fecha, Total)
+                SELECT 
+                    MIN(CP.CitasProcedimientosID), 
+                    GETDATE(), 
+                    SUM(ISNULL(CP.Costo_Procedimiento, PR.Costo))
+                FROM Citas_Procedimientos CP
+                INNER JOIN Citas C ON CP.CitaID = C.CitaID
+                INNER JOIN Procedimientos PR ON CP.ProcedimientoID = PR.ProcedimientoID
+                WHERE C.PacienteID = @PacienteID AND C.Estado = 1
+                GROUP BY C.CitaID";
+
+                        SqlCommand cmdPagoSinDescuento = new SqlCommand(queryPagoSinDescuento, con);
+                        cmdPagoSinDescuento.Parameters.AddWithValue("@PacienteID", pacienteID);
+
+                        int filasInsertadas = cmdPagoSinDescuento.ExecuteNonQuery();
+
+                        if (filasInsertadas == 0)
+                        {
+                            MessageBox.Show("No se pudo registrar el pago. Verifica los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
 
-                    // Registra el pago
-                    string queryPago = @"
-                    INSERT INTO Pago (CitasProcedimientosID, Fecha, Total)
-                    SELECT CP.CitasProcedimientosID, GETDATE(), @Total
-                    FROM Citas_Procedimientos CP
-                    INNER JOIN Citas C ON CP.CitaID = C.CitaID
-                    WHERE C.PacienteID = @PacienteID AND C.Estado = 1";
-
-                    SqlCommand cmdPago = new SqlCommand(queryPago, con);
-                    cmdPago.Parameters.AddWithValue("@Total", totalPagar);
-                    cmdPago.Parameters.AddWithValue("@PacienteID", pacienteID);
-                    int filasInsertadas = cmdPago.ExecuteNonQuery();
-
-                    if (filasInsertadas == 0)
-                    {
-                        MessageBox.Show("No se pudo registrar el pago. Verifica los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Actualiza el estado de la cita
+                    // Actualiza el estado de las citas asociadas
                     string queryActualizarCita = @"
-                UPDATE Citas
-                SET Estado = 0
-                WHERE PacienteID = @PacienteID AND Estado = 1";
+            UPDATE Citas
+            SET Estado = 0
+            WHERE PacienteID = @PacienteID AND Estado = 1";
 
                     SqlCommand cmdActualizarCita = new SqlCommand(queryActualizarCita, con);
                     cmdActualizarCita.Parameters.AddWithValue("@PacienteID", pacienteID);
                     cmdActualizarCita.ExecuteNonQuery();
 
+                    // Refrescar datos en la interfaz
                     CargarPagos();
                     CargarPacientes();
                     MessageBox.Show("Pago registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
