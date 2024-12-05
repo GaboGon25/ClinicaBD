@@ -35,6 +35,8 @@
             pbxCerrar = new PictureBox();
             pbxRestauar = new PictureBox();
             pnlSideBar = new Panel();
+            panel5 = new Panel();
+            btnIngresos = new Button();
             panel4 = new Panel();
             btnPagos = new Button();
             panel3 = new Panel();
@@ -45,7 +47,6 @@
             btnPacientes = new Button();
             pictureBox1 = new PictureBox();
             pnlContenedor = new Panel();
-            btnIngresos = new Button();
             pnlLetrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxOcultar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxMinimizar).BeginInit();
@@ -124,6 +125,7 @@
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.ForestGreen;
+            pnlSideBar.Controls.Add(panel5);
             pnlSideBar.Controls.Add(btnIngresos);
             pnlSideBar.Controls.Add(panel4);
             pnlSideBar.Controls.Add(btnPagos);
@@ -140,10 +142,38 @@
             pnlSideBar.Size = new Size(200, 729);
             pnlSideBar.TabIndex = 1;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(124, 175, 32);
+            panel5.Location = new Point(0, 563);
+            panel5.Margin = new Padding(2, 1, 2, 1);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(11, 46);
+            panel5.TabIndex = 8;
+            // 
+            // btnIngresos
+            // 
+            btnIngresos.Cursor = Cursors.Hand;
+            btnIngresos.FlatAppearance.BorderSize = 0;
+            btnIngresos.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+            btnIngresos.FlatStyle = FlatStyle.Flat;
+            btnIngresos.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnIngresos.ForeColor = SystemColors.ControlLightLight;
+            btnIngresos.Image = (Image)resources.GetObject("btnIngresos.Image");
+            btnIngresos.ImageAlign = ContentAlignment.MiddleRight;
+            btnIngresos.Location = new Point(2, 563);
+            btnIngresos.Margin = new Padding(2, 1, 2, 1);
+            btnIngresos.Name = "btnIngresos";
+            btnIngresos.Size = new Size(198, 46);
+            btnIngresos.TabIndex = 8;
+            btnIngresos.Text = "Informe de Ingresos";
+            btnIngresos.UseVisualStyleBackColor = true;
+            btnIngresos.Click += btnIngresos_Click;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(124, 175, 32);
-            panel4.Location = new Point(2, 482);
+            panel4.Location = new Point(0, 482);
             panel4.Margin = new Padding(2, 1, 2, 1);
             panel4.Name = "panel4";
             panel4.Size = new Size(10, 46);
@@ -155,10 +185,10 @@
             btnPagos.FlatAppearance.BorderSize = 0;
             btnPagos.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnPagos.FlatStyle = FlatStyle.Flat;
-            btnPagos.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPagos.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPagos.ForeColor = SystemColors.ControlLightLight;
             btnPagos.Image = (Image)resources.GetObject("btnPagos.Image");
-            btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPagos.ImageAlign = ContentAlignment.MiddleRight;
             btnPagos.Location = new Point(2, 482);
             btnPagos.Margin = new Padding(2, 1, 2, 1);
             btnPagos.Name = "btnPagos";
@@ -174,13 +204,13 @@
             panel3.Location = new Point(0, 381);
             panel3.Margin = new Padding(2, 1, 2, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(12, 46);
+            panel3.Size = new Size(10, 46);
             panel3.TabIndex = 5;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(124, 175, 32);
-            panel2.Location = new Point(2, 272);
+            panel2.Location = new Point(0, 272);
             panel2.Margin = new Padding(2, 1, 2, 1);
             panel2.Name = "panel2";
             panel2.Size = new Size(10, 46);
@@ -192,10 +222,10 @@
             btnCitas.FlatAppearance.BorderSize = 0;
             btnCitas.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnCitas.FlatStyle = FlatStyle.Flat;
-            btnCitas.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnCitas.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCitas.ForeColor = SystemColors.ControlLightLight;
             btnCitas.Image = (Image)resources.GetObject("btnCitas.Image");
-            btnCitas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCitas.ImageAlign = ContentAlignment.MiddleRight;
             btnCitas.Location = new Point(0, 381);
             btnCitas.Margin = new Padding(2, 1, 2, 1);
             btnCitas.Name = "btnCitas";
@@ -208,10 +238,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(124, 175, 32);
-            panel1.Location = new Point(2, 177);
+            panel1.Location = new Point(0, 177);
             panel1.Margin = new Padding(2, 1, 2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(10, 46);
+            panel1.Size = new Size(11, 46);
             panel1.TabIndex = 3;
             // 
             // btnExpediente
@@ -220,10 +250,10 @@
             btnExpediente.FlatAppearance.BorderSize = 0;
             btnExpediente.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnExpediente.FlatStyle = FlatStyle.Flat;
-            btnExpediente.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnExpediente.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExpediente.ForeColor = SystemColors.ControlLightLight;
             btnExpediente.Image = (Image)resources.GetObject("btnExpediente.Image");
-            btnExpediente.ImageAlign = ContentAlignment.MiddleLeft;
+            btnExpediente.ImageAlign = ContentAlignment.MiddleRight;
             btnExpediente.Location = new Point(2, 272);
             btnExpediente.Margin = new Padding(2, 1, 2, 1);
             btnExpediente.Name = "btnExpediente";
@@ -239,10 +269,10 @@
             btnPacientes.FlatAppearance.BorderSize = 0;
             btnPacientes.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnPacientes.FlatStyle = FlatStyle.Flat;
-            btnPacientes.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnPacientes.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPacientes.ForeColor = SystemColors.ControlLightLight;
             btnPacientes.Image = (Image)resources.GetObject("btnPacientes.Image");
-            btnPacientes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPacientes.ImageAlign = ContentAlignment.MiddleRight;
             btnPacientes.Location = new Point(2, 177);
             btnPacientes.Margin = new Padding(2, 1, 2, 1);
             btnPacientes.Name = "btnPacientes";
@@ -272,25 +302,6 @@
             pnlContenedor.Name = "pnlContenedor";
             pnlContenedor.Size = new Size(1186, 729);
             pnlContenedor.TabIndex = 2;
-            // 
-            // btnIngresos
-            // 
-            btnIngresos.Cursor = Cursors.Hand;
-            btnIngresos.FlatAppearance.BorderSize = 0;
-            btnIngresos.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
-            btnIngresos.FlatStyle = FlatStyle.Flat;
-            btnIngresos.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnIngresos.ForeColor = SystemColors.ControlLightLight;
-            btnIngresos.Image = (Image)resources.GetObject("btnIngresos.Image");
-            btnIngresos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIngresos.Location = new Point(2, 563);
-            btnIngresos.Margin = new Padding(2, 1, 2, 1);
-            btnIngresos.Name = "btnIngresos";
-            btnIngresos.Size = new Size(198, 46);
-            btnIngresos.TabIndex = 8;
-            btnIngresos.Text = "INGRESOS";
-            btnIngresos.UseVisualStyleBackColor = true;
-            btnIngresos.Click += btnIngresos_Click;
             // 
             // frmCentral
             // 
@@ -334,5 +345,6 @@
         private Button btnCitas;
         private Button btnExpediente;
         private Button btnIngresos;
+        private Panel panel5;
     }
 }

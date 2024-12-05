@@ -195,8 +195,7 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
 
                     // Ajustar columnas automáticamente al contenido
                     dgvExpediente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-                    // Opcional: Alinear texto de las columnas al centro (si deseas mejorar la estética)
+                  
                     foreach (DataGridViewColumn column in dgvExpediente.Columns)
                     {
                         column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -271,20 +270,17 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
         {
             try
             {
-                // Asegúrate de que se haya seleccionado un expediente y que el TextBox no esté vacío
                 if (string.IsNullOrWhiteSpace(txtExpedienteID.Text) || int.TryParse(txtExpedienteID.Text, out int expedienteID) == false)
                 {
                     MessageBox.Show("Por favor, selecciona un expediente para editar.");
                     return;
                 }
 
-                // Inicia la conexión y la transacción
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     using (SqlTransaction transaction = connection.BeginTransaction())
-                    {
-                        // Actualizar los valores del expediente
+                    {                       
                         SqlCommand cmdActualizarExpediente = new SqlCommand(
                             "UPDATE Expediente SET Historial_Medico = @Historial_Medico, UsoMarcapasos = @UsoMarcapasos " +
                             "WHERE ExpedienteID = @ExpedienteID", connection, transaction);
@@ -349,7 +345,7 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
                                         connection, transaction);
 
                                     cmdActualizarCuidadosPiel.Parameters.AddWithValue("@ExpedienteID", expedienteID);
-                                    cmdActualizarCuidadosPiel.Parameters.AddWithValue("@CuidadosPielID", i + 1); // IDs de cuidados predefinidos
+                                    cmdActualizarCuidadosPiel.Parameters.AddWithValue("@CuidadosPielID", i + 1); 
 
                                     cmdActualizarCuidadosPiel.ExecuteNonQuery();
                                 }
@@ -373,7 +369,6 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
             {
                 MessageBox.Show("Error al actualizar el expediente: " + ex.Message);
             }
-
         }
 
         private void dgvExpediente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -384,11 +379,7 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
                 DataGridViewRow row = dgvExpediente.Rows[e.RowIndex];
 
                 txtExpedienteID.Text = row.Cells["ExpedienteID"].Value.ToString();
-
-                //// Asignamos el ExpedienteID a la variable
-                //expedienteID = Convert.ToInt32(row.Cells["ExpedienteID"].Value);  // Aquí obtenemos el ID de la fila seleccionada
-
-
+               
                 txtHistorialMedico.Text = row.Cells["HistorialMedico"].Value?.ToString();
                 radioButtonSi.Checked = row.Cells["UsoMarcapasos"].Value?.ToString() == "Sí";
                 radioButtonNo.Checked = row.Cells["UsoMarcapasos"].Value?.ToString() == "No";
@@ -397,10 +388,10 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
                 // Obtén el valor de la columna "BiotipoCutaneo" en la fila seleccionada
                 object valorr = row.Cells["BiotipoCutaneo"].Value;
 
-                // Asegúrate de que valorr no sea nulo
+              
                 if (valorr != null)
                 {
-                    string biotipoNombre = valorr.ToString();  // Convertir a cadena
+                    string biotipoNombre = valorr.ToString();  
 
                     // Verifica si el nombre existe en el ComboBox (en el campo 'Tipo')
                     var selectedRow = ((DataTable)cmbBiotipoCutaneo.DataSource)
@@ -420,59 +411,40 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
                     }
                 }
                 else
-                {
-                    // Manejo de valor nulo
+                {                 
                     cmbBiotipoCutaneo.SelectedIndex = -1;
                     MessageBox.Show("El valor de la celda es nulo.");
                 }
-
-
-                // Obtener el valor de la columna "Paciente" que contiene el nombre y apellido
+      
                 string pacienteCompleto = row.Cells["Paciente"].Value.ToString();
-
-                // Dividir el nombre completo en dos partes (suponiendo que el nombre y apellido están separados por un espacio)
+                
                 string[] partesNombre = pacienteCompleto.Split(' ');
-
-                // Asegurarse de que hay al menos dos partes (nombre y apellido)
+                
                 if (partesNombre.Length >= 2)
                 {
-                    string nombre = partesNombre[0];  // Primer parte es el nombre
-                    string apellido = partesNombre[1];  // Segunda parte es el apellido
-
-                    // Asignar los valores a los TextBox correspondientes
+                    string nombre = partesNombre[0];  
+                    string apellido = partesNombre[1];  
+                   
                     txtNombrePaciente.Text = nombre;
-                    txtApellidoPaciente.Text = apellido;
-
-                    
+                    txtApellidoPaciente.Text = apellido;                   
                 }
-
 
                 // Obtener el contenido de la celda de hábitos
                 string habitos = row.Cells["Habitos"].Value?.ToString();
-
-                // Dividir la cadena de hábitos por coma para separar cada par clave-valor
+               
                 string[] listaHabitos = habitos.Split(',');
-
-                // Iterar sobre cada par clave-valor
+             
                 foreach (string habito in listaHabitos)
-                {
-                    // Limpiar espacios antes y después del texto
+                {                   
                     string habitoTrimmed = habito.Trim();
 
-                    //// Depuración: Verificar cómo se está dividiendo cada hábito
-                    //MessageBox.Show("Hábito actual: " + habitoTrimmed);
-
-                    // Dividir cada par clave:valor por el caracter ":"
                     string[] partes = habitoTrimmed.Split(':');
 
                     if (partes.Length == 2)
                     {
-                        string clave = partes[0].Trim();  // La clave
-                        string valor = partes[1].Trim();  // El valor
-
-                        //// Depuración: Verificar clave y valor
-                        //MessageBox.Show("Clave: " + clave + " | Valor: " + valor);
-
+                        string clave = partes[0].Trim();  
+                        string valor = partes[1].Trim();  
+                   
                         // Asignar los valores a los controles correspondientes según la clave
                         switch (clave)
                         {
@@ -532,10 +504,7 @@ INNER JOIN Biotipo_Cutaneo bc ON e.BiotipoCutaneoID = bc.BiotipoCutaneoID";
                 if (cuidadosPiel.Contains("Serum")) checkBoxSerum.Checked = true;
                 if (cuidadosPiel.Contains("Aceites")) checkBoxAceites.Checked = true;
                 if (cuidadosPiel.Contains("Ninguno")) checkBoxNinguno.Checked = true;
-            }
-
-            
-
+            }         
         }
     }
 }

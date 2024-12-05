@@ -1,6 +1,6 @@
 ﻿namespace ClinicaBD
 {
-    partial class frmRegistrosPacientes
+    partial class frmCitasPaciente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistrosPacientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCitasPaciente));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            frmLetrero = new Panel();
+            pnlLetrero = new Panel();
             pbxCerrar = new PictureBox();
             pnlTitulo = new Panel();
             label1 = new Label();
             dgvPacientes = new DataGridView();
-            frmLetrero.SuspendLayout();
+            pnlLetrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxCerrar).BeginInit();
             pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPacientes).BeginInit();
             SuspendLayout();
             // 
-            // frmLetrero
+            // pnlLetrero
             // 
-            frmLetrero.BackColor = Color.FromArgb(124, 175, 32);
-            frmLetrero.Controls.Add(pbxCerrar);
-            frmLetrero.Dock = DockStyle.Top;
-            frmLetrero.Location = new Point(0, 0);
-            frmLetrero.Name = "frmLetrero";
-            frmLetrero.Size = new Size(779, 40);
-            frmLetrero.TabIndex = 0;
-            frmLetrero.MouseDown += frmLetrero_MouseDown;
+            pnlLetrero.BackColor = Color.FromArgb(124, 175, 32);
+            pnlLetrero.Controls.Add(pbxCerrar);
+            pnlLetrero.Dock = DockStyle.Top;
+            pnlLetrero.Location = new Point(0, 0);
+            pnlLetrero.Name = "pnlLetrero";
+            pnlLetrero.Size = new Size(779, 40);
+            pnlLetrero.TabIndex = 0;
+            pnlLetrero.MouseDown += pnlLetrero_MouseDown;
             // 
             // pbxCerrar
             // 
@@ -62,7 +62,7 @@
             pbxCerrar.Name = "pbxCerrar";
             pbxCerrar.Size = new Size(25, 25);
             pbxCerrar.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxCerrar.TabIndex = 19;
+            pbxCerrar.TabIndex = 20;
             pbxCerrar.TabStop = false;
             pbxCerrar.Click += pbxCerrar_Click;
             // 
@@ -74,7 +74,7 @@
             pnlTitulo.Location = new Point(12, 46);
             pnlTitulo.Name = "pnlTitulo";
             pnlTitulo.Size = new Size(163, 54);
-            pnlTitulo.TabIndex = 18;
+            pnlTitulo.TabIndex = 19;
             // 
             // label1
             // 
@@ -102,7 +102,7 @@
             dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvPacientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPacientes.EnableHeadersVisualStyles = false;
-            dgvPacientes.Location = new Point(250, 138);
+            dgvPacientes.Location = new Point(272, 121);
             dgvPacientes.Name = "dgvPacientes";
             dgvPacientes.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -113,22 +113,22 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dgvPacientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvPacientes.Size = new Size(202, 197);
-            dgvPacientes.TabIndex = 19;
+            dgvPacientes.TabIndex = 21;
             dgvPacientes.CellClick += dgvPacientes_CellClick;
             // 
-            // frmRegistrosPacientes
+            // frmCitasPaciente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(779, 379);
             Controls.Add(dgvPacientes);
             Controls.Add(pnlTitulo);
-            Controls.Add(frmLetrero);
+            Controls.Add(pnlLetrero);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmRegistrosPacientes";
-            Text = "frmRegistrosPacientes";
-            Load += frmRegistrosPacientes_Load;
-            frmLetrero.ResumeLayout(false);
+            Name = "frmCitasPaciente";
+            Text = "frmCitasPaciente";
+            Load += frmCitasPaciente_Load;
+            pnlLetrero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxCerrar).EndInit();
             pnlTitulo.ResumeLayout(false);
             pnlTitulo.PerformLayout();
@@ -138,10 +138,10 @@
 
         #endregion
 
-        private Panel frmLetrero;
-        private PictureBox pbxCerrar;
+        private Panel pnlLetrero;
         private Panel pnlTitulo;
         private Label label1;
+        private PictureBox pbxCerrar;
         private DataGridView dgvPacientes;
     }
 }

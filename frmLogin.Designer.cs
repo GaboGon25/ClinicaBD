@@ -179,16 +179,20 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(504, 164);
+            txtUsername.BackColor = SystemColors.ControlLightLight;
+            txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Location = new Point(504, 175);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(254, 23);
+            txtUsername.Size = new Size(254, 16);
             txtUsername.TabIndex = 12;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(505, 259);
+            txtPassword.BackColor = SystemColors.ControlLightLight;
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Location = new Point(504, 270);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(254, 23);
+            txtPassword.Size = new Size(254, 16);
             txtPassword.TabIndex = 13;
             // 
             // frmLogin

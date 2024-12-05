@@ -387,7 +387,7 @@
             // 
             txtHistorialMedico.Anchor = AnchorStyles.None;
             txtHistorialMedico.Font = new Font("Times New Roman", 11.25F);
-            txtHistorialMedico.Location = new Point(523, 318);
+            txtHistorialMedico.Location = new Point(588, 318);
             txtHistorialMedico.Multiline = true;
             txtHistorialMedico.Name = "txtHistorialMedico";
             txtHistorialMedico.Size = new Size(332, 122);
@@ -398,7 +398,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(412, 319);
+            label9.Location = new Point(477, 319);
             label9.Name = "label9";
             label9.Size = new Size(105, 19);
             label9.TabIndex = 61;
@@ -470,9 +470,10 @@
             // 
             // linkLabel1
             // 
+            linkLabel1.Anchor = AnchorStyles.Left;
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.Location = new Point(12, 458);
+            linkLabel1.Location = new Point(176, 458);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(295, 19);
             linkLabel1.TabIndex = 63;
@@ -514,6 +515,7 @@
             // 
             // groupBox5
             // 
+            groupBox5.Anchor = AnchorStyles.None;
             groupBox5.Controls.Add(txtNombrePaciente);
             groupBox5.Controls.Add(txtApellidoPaciente);
             groupBox5.Controls.Add(label10);
@@ -521,7 +523,7 @@
             groupBox5.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox5.Location = new Point(12, 319);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(344, 136);
+            groupBox5.Size = new Size(459, 136);
             groupBox5.TabIndex = 65;
             groupBox5.TabStop = false;
             groupBox5.Text = "PACIENTE";

@@ -34,10 +34,6 @@ namespace ClinicaBD
 
         private void pbxMinimizar_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Normal;
-            //pbxRestauar.Visible = false;
-            //pbxMinimizar.Visible = true;
-
             this.WindowState = FormWindowState.Maximized;
             pbxMinimizar.Visible = false;
             pbxRestauar.Visible = true;
@@ -45,10 +41,6 @@ namespace ClinicaBD
 
         private void pbxRestauar_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Maximized;
-            //pbxMinimizar.Visible = false;
-            //pbxRestauar.Visible = true;
-
             this.WindowState = FormWindowState.Normal;
             pbxRestauar.Visible = false;
             pbxMinimizar.Visible = true;
@@ -65,11 +57,6 @@ namespace ClinicaBD
             this.pnlContenedor.Tag = fp;
             fp.Show();
         }
-
-        //private void btnPaciente_Click(object sender, EventArgs e)
-        //{
-        //    AbrirFormPanel(new frmPaciente());
-        //}
 
         private void btnPacientes_Click(object sender, EventArgs e)
         {

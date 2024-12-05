@@ -122,7 +122,7 @@ namespace ClinicaBD
                     if (reader.Read())
                     {
                         decimal ingresosTotales = reader.GetDecimal(reader.GetOrdinal("IngresosTotales"));
-                        lblIngresosTotales.Text = $"Ingresos Totales: {ingresosTotales:C}";
+                        lblIngresosTotales.Text = $"Ingresos Totales: {ingresosTotales.ToString("C", new System.Globalization.CultureInfo("en-US"))}";
                     }
 
                     // Leer el ranking de procedimientos

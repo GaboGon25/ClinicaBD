@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ClinicaBD
 {
-    public partial class frmRegistrosPacientes : Form
+    public partial class frmCitasPaciente : Form
     {
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ClinicaBD"].ConnectionString;
-        public frmRegistrosPacientes()
+        public frmCitasPaciente()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace ClinicaBD
             this.Close();
         }
 
-        private void frmLetrero_MouseDown(object sender, MouseEventArgs e)
+        private void pnlLetrero_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -46,7 +46,9 @@ namespace ClinicaBD
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT p.PacienteID, p.Nombre, p.Apellido FROM Paciente p LEFT JOIN Expediente e ON p.PacienteID = e.PacienteID WHERE e.PacienteID IS NULL";
+                string query = "SELECT p.PacienteID, p.Nombre, p.Apellido " +
+                               "FROM Paciente p " +
+                               "INNER JOIN Expediente e ON p.PacienteID = e.PacienteID";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -55,24 +57,26 @@ namespace ClinicaBD
             }
         }
 
-        private void frmRegistrosPacientes_Load(object sender, EventArgs e)
-        {
-            CargarPacientes();
-        }
         private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+
+            if (e.RowIndex >= 0)
             {
                 int pacienteID = Convert.ToInt32(dgvPacientes.Rows[e.RowIndex].Cells["PacienteID"].Value);
                 string nombre = dgvPacientes.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                 string apellido = dgvPacientes.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
 
-                if (this.Owner is frmExpediente formExpediente)
+                if (this.Owner is frmCitas formCitas)
                 {
-                    formExpediente.SetPacienteSeleccionado(pacienteID,nombre, apellido);
+                    formCitas.SetPacienteSeleccionado2(pacienteID, nombre, apellido);
                 }
                 this.Close();
             }
+        }
+
+        private void frmCitasPaciente_Load(object sender, EventArgs e)
+        {
+            CargarPacientes();
         }
     }
 }
