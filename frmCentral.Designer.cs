@@ -45,6 +45,7 @@
             btnPacientes = new Button();
             pictureBox1 = new PictureBox();
             pnlContenedor = new Panel();
+            btnIngresos = new Button();
             pnlLetrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxOcultar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxMinimizar).BeginInit();
@@ -123,6 +124,7 @@
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.ForestGreen;
+            pnlSideBar.Controls.Add(btnIngresos);
             pnlSideBar.Controls.Add(panel4);
             pnlSideBar.Controls.Add(btnPagos);
             pnlSideBar.Controls.Add(panel3);
@@ -153,7 +155,7 @@
             btnPagos.FlatAppearance.BorderSize = 0;
             btnPagos.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnPagos.FlatStyle = FlatStyle.Flat;
-            btnPagos.Font = new Font("Century Schoolbook", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPagos.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPagos.ForeColor = SystemColors.ControlLightLight;
             btnPagos.Image = (Image)resources.GetObject("btnPagos.Image");
             btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
@@ -190,7 +192,7 @@
             btnCitas.FlatAppearance.BorderSize = 0;
             btnCitas.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnCitas.FlatStyle = FlatStyle.Flat;
-            btnCitas.Font = new Font("Century Schoolbook", 11.25F);
+            btnCitas.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnCitas.ForeColor = SystemColors.ControlLightLight;
             btnCitas.Image = (Image)resources.GetObject("btnCitas.Image");
             btnCitas.ImageAlign = ContentAlignment.MiddleLeft;
@@ -218,7 +220,7 @@
             btnExpediente.FlatAppearance.BorderSize = 0;
             btnExpediente.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnExpediente.FlatStyle = FlatStyle.Flat;
-            btnExpediente.Font = new Font("Century Schoolbook", 11.25F);
+            btnExpediente.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnExpediente.ForeColor = SystemColors.ControlLightLight;
             btnExpediente.Image = (Image)resources.GetObject("btnExpediente.Image");
             btnExpediente.ImageAlign = ContentAlignment.MiddleLeft;
@@ -237,7 +239,7 @@
             btnPacientes.FlatAppearance.BorderSize = 0;
             btnPacientes.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
             btnPacientes.FlatStyle = FlatStyle.Flat;
-            btnPacientes.Font = new Font("Century Schoolbook", 11.25F);
+            btnPacientes.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnPacientes.ForeColor = SystemColors.ControlLightLight;
             btnPacientes.Image = (Image)resources.GetObject("btnPacientes.Image");
             btnPacientes.ImageAlign = ContentAlignment.MiddleLeft;
@@ -270,6 +272,25 @@
             pnlContenedor.Name = "pnlContenedor";
             pnlContenedor.Size = new Size(1186, 729);
             pnlContenedor.TabIndex = 2;
+            // 
+            // btnIngresos
+            // 
+            btnIngresos.Cursor = Cursors.Hand;
+            btnIngresos.FlatAppearance.BorderSize = 0;
+            btnIngresos.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+            btnIngresos.FlatStyle = FlatStyle.Flat;
+            btnIngresos.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnIngresos.ForeColor = SystemColors.ControlLightLight;
+            btnIngresos.Image = (Image)resources.GetObject("btnIngresos.Image");
+            btnIngresos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnIngresos.Location = new Point(2, 563);
+            btnIngresos.Margin = new Padding(2, 1, 2, 1);
+            btnIngresos.Name = "btnIngresos";
+            btnIngresos.Size = new Size(198, 46);
+            btnIngresos.TabIndex = 8;
+            btnIngresos.Text = "INGRESOS";
+            btnIngresos.UseVisualStyleBackColor = true;
+            btnIngresos.Click += btnIngresos_Click;
             // 
             // frmCentral
             // 
@@ -312,5 +333,6 @@
         private Panel panel2;
         private Button btnCitas;
         private Button btnExpediente;
+        private Button btnIngresos;
     }
 }

@@ -118,5 +118,10 @@ namespace ClinicaBD
         {
             pictureBox1_Click(null, e);
         }
+
+        private void btnIngresos_Click(object sender, EventArgs e)
+        {
+            AbrirFormPanel(new frmIngresos());
+        }
     }
 }

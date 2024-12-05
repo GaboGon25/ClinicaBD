@@ -144,6 +144,8 @@ namespace ClinicaBD
         {
             CargarPacientes();
             CargarPagos();
+            LimpiarCampos(); 
+            cmbPacientes.SelectedIndex = -1;
         }
 
         private void cmbPacientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,6 +182,10 @@ namespace ClinicaBD
             txtProcedimientos.Clear();
             txtTotal.Clear();
             txtTotalDescuento.Clear();
+            rbtnSi.Checked = false;
+            rbtnNo.Checked = false;
+            txtTotal.Enabled = true;
+            txtTotalDescuento.Enabled = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
