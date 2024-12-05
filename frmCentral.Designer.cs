@@ -47,6 +47,7 @@
             btnPacientes = new Button();
             pictureBox1 = new PictureBox();
             pnlContenedor = new Panel();
+            btnCitasProgramadas = new Button();
             pnlLetrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxOcultar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxMinimizar).BeginInit();
@@ -125,6 +126,7 @@
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.ForestGreen;
+            pnlSideBar.Controls.Add(btnCitasProgramadas);
             pnlSideBar.Controls.Add(panel5);
             pnlSideBar.Controls.Add(btnIngresos);
             pnlSideBar.Controls.Add(panel4);
@@ -145,7 +147,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(124, 175, 32);
-            panel5.Location = new Point(0, 563);
+            panel5.Location = new Point(2, 598);
             panel5.Margin = new Padding(2, 1, 2, 1);
             panel5.Name = "panel5";
             panel5.Size = new Size(11, 46);
@@ -161,7 +163,7 @@
             btnIngresos.ForeColor = SystemColors.ControlLightLight;
             btnIngresos.Image = (Image)resources.GetObject("btnIngresos.Image");
             btnIngresos.ImageAlign = ContentAlignment.MiddleRight;
-            btnIngresos.Location = new Point(2, 563);
+            btnIngresos.Location = new Point(2, 598);
             btnIngresos.Margin = new Padding(2, 1, 2, 1);
             btnIngresos.Name = "btnIngresos";
             btnIngresos.Size = new Size(198, 46);
@@ -173,7 +175,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(124, 175, 32);
-            panel4.Location = new Point(0, 482);
+            panel4.Location = new Point(3, 530);
             panel4.Margin = new Padding(2, 1, 2, 1);
             panel4.Name = "panel4";
             panel4.Size = new Size(10, 46);
@@ -189,7 +191,7 @@
             btnPagos.ForeColor = SystemColors.ControlLightLight;
             btnPagos.Image = (Image)resources.GetObject("btnPagos.Image");
             btnPagos.ImageAlign = ContentAlignment.MiddleRight;
-            btnPagos.Location = new Point(2, 482);
+            btnPagos.Location = new Point(0, 530);
             btnPagos.Margin = new Padding(2, 1, 2, 1);
             btnPagos.Name = "btnPagos";
             btnPagos.Size = new Size(198, 46);
@@ -303,6 +305,25 @@
             pnlContenedor.Size = new Size(1186, 729);
             pnlContenedor.TabIndex = 2;
             // 
+            // btnCitasProgramadas
+            // 
+            btnCitasProgramadas.Cursor = Cursors.Hand;
+            btnCitasProgramadas.FlatAppearance.BorderSize = 0;
+            btnCitasProgramadas.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+            btnCitasProgramadas.FlatStyle = FlatStyle.Flat;
+            btnCitasProgramadas.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCitasProgramadas.ForeColor = SystemColors.ControlLightLight;
+            btnCitasProgramadas.Image = (Image)resources.GetObject("btnCitasProgramadas.Image");
+            btnCitasProgramadas.ImageAlign = ContentAlignment.MiddleRight;
+            btnCitasProgramadas.Location = new Point(-2, 451);
+            btnCitasProgramadas.Margin = new Padding(2, 1, 2, 1);
+            btnCitasProgramadas.Name = "btnCitasProgramadas";
+            btnCitasProgramadas.Size = new Size(200, 46);
+            btnCitasProgramadas.TabIndex = 9;
+            btnCitasProgramadas.Text = "CITAS PROGRAMADAS";
+            btnCitasProgramadas.UseVisualStyleBackColor = true;
+            btnCitasProgramadas.Click += btnCitasProgramadas_Click;
+            // 
             // frmCentral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -346,5 +367,6 @@
         private Button btnExpediente;
         private Button btnIngresos;
         private Panel panel5;
+        private Button btnCitasProgramadas;
     }
 }

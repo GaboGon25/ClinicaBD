@@ -22,17 +22,10 @@ namespace ClinicaBD
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmRegistrosPacientes frmRegistrosPacientes = new frmRegistrosPacientes();
-            //frmRegistrosPacientes.Owner = this;
-            //frmRegistrosPacientes.ShowDialog();
-
             frmCitasPaciente frmCitasPaciente = new frmCitasPaciente();
             frmCitasPaciente.Owner = this;
             frmCitasPaciente.ShowDialog();
         }
-
-        
-
         private void CargarProcedimientos()
         {
             try
@@ -213,6 +206,7 @@ namespace ClinicaBD
                     da.Fill(dt);
 
                     dgvCitas.DataSource = dt; // Mostrar los datos en el DataGrid
+                    dgvCitas.Columns["CitaID"].Visible = false;
                 }
             }
             catch (Exception ex)

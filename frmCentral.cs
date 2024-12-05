@@ -110,5 +110,10 @@ namespace ClinicaBD
         {
             AbrirFormPanel(new frmIngresos());
         }
+
+        private void btnCitasProgramadas_Click(object sender, EventArgs e)
+        {
+            AbrirFormPanel(new frmCitasProgramadas());
+        }
     }
 }
