@@ -35,6 +35,7 @@
             pbxCerrar = new PictureBox();
             pbxRestauar = new PictureBox();
             pnlSideBar = new Panel();
+            btnCitasProgramadas = new Button();
             panel5 = new Panel();
             btnIngresos = new Button();
             panel4 = new Panel();
@@ -47,7 +48,7 @@
             btnPacientes = new Button();
             pictureBox1 = new PictureBox();
             pnlContenedor = new Panel();
-            btnCitasProgramadas = new Button();
+            panel6 = new Panel();
             pnlLetrero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxOcultar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxMinimizar).BeginInit();
@@ -126,6 +127,7 @@
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.ForestGreen;
+            pnlSideBar.Controls.Add(panel6);
             pnlSideBar.Controls.Add(btnCitasProgramadas);
             pnlSideBar.Controls.Add(panel5);
             pnlSideBar.Controls.Add(btnIngresos);
@@ -144,10 +146,30 @@
             pnlSideBar.Size = new Size(200, 729);
             pnlSideBar.TabIndex = 1;
             // 
+            // btnCitasProgramadas
+            // 
+            btnCitasProgramadas.Cursor = Cursors.Hand;
+            btnCitasProgramadas.FlatAppearance.BorderSize = 0;
+            btnCitasProgramadas.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
+            btnCitasProgramadas.FlatStyle = FlatStyle.Flat;
+            btnCitasProgramadas.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCitasProgramadas.ForeColor = SystemColors.ControlLightLight;
+            btnCitasProgramadas.Image = (Image)resources.GetObject("btnCitasProgramadas.Image");
+            btnCitasProgramadas.ImageAlign = ContentAlignment.MiddleRight;
+            btnCitasProgramadas.Location = new Point(-2, 451);
+            btnCitasProgramadas.Margin = new Padding(2, 1, 2, 1);
+            btnCitasProgramadas.Name = "btnCitasProgramadas";
+            btnCitasProgramadas.Size = new Size(200, 46);
+            btnCitasProgramadas.TabIndex = 9;
+            btnCitasProgramadas.Text = "CITAS PROGRAMADAS";
+            btnCitasProgramadas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCitasProgramadas.UseVisualStyleBackColor = true;
+            btnCitasProgramadas.Click += btnCitasProgramadas_Click;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(124, 175, 32);
-            panel5.Location = new Point(2, 598);
+            panel5.Location = new Point(0, 598);
             panel5.Margin = new Padding(2, 1, 2, 1);
             panel5.Name = "panel5";
             panel5.Size = new Size(11, 46);
@@ -168,14 +190,15 @@
             btnIngresos.Name = "btnIngresos";
             btnIngresos.Size = new Size(198, 46);
             btnIngresos.TabIndex = 8;
-            btnIngresos.Text = "Informe de Ingresos";
+            btnIngresos.Text = "INFORME DE INGRESOS";
+            btnIngresos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnIngresos.UseVisualStyleBackColor = true;
             btnIngresos.Click += btnIngresos_Click;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(124, 175, 32);
-            panel4.Location = new Point(3, 530);
+            panel4.Location = new Point(0, 530);
             panel4.Margin = new Padding(2, 1, 2, 1);
             panel4.Name = "panel4";
             panel4.Size = new Size(10, 46);
@@ -197,13 +220,14 @@
             btnPagos.Size = new Size(198, 46);
             btnPagos.TabIndex = 6;
             btnPagos.Text = "PAGOS";
+            btnPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPagos.UseVisualStyleBackColor = true;
             btnPagos.Click += btnPagos_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(124, 175, 32);
-            panel3.Location = new Point(0, 381);
+            panel3.Location = new Point(1, 373);
             panel3.Margin = new Padding(2, 1, 2, 1);
             panel3.Name = "panel3";
             panel3.Size = new Size(10, 46);
@@ -228,12 +252,13 @@
             btnCitas.ForeColor = SystemColors.ControlLightLight;
             btnCitas.Image = (Image)resources.GetObject("btnCitas.Image");
             btnCitas.ImageAlign = ContentAlignment.MiddleRight;
-            btnCitas.Location = new Point(0, 381);
+            btnCitas.Location = new Point(1, 373);
             btnCitas.Margin = new Padding(2, 1, 2, 1);
             btnCitas.Name = "btnCitas";
             btnCitas.Size = new Size(200, 46);
             btnCitas.TabIndex = 4;
             btnCitas.Text = "CITAS";
+            btnCitas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCitas.UseVisualStyleBackColor = true;
             btnCitas.Click += btnCitas_Click;
             // 
@@ -262,6 +287,7 @@
             btnExpediente.Size = new Size(196, 46);
             btnExpediente.TabIndex = 4;
             btnExpediente.Text = "EXPEDIENTE";
+            btnExpediente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExpediente.UseVisualStyleBackColor = true;
             btnExpediente.Click += btnExpediente_Click;
             // 
@@ -281,6 +307,7 @@
             btnPacientes.Size = new Size(196, 46);
             btnPacientes.TabIndex = 2;
             btnPacientes.Text = "PACIENTES";
+            btnPacientes.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPacientes.UseVisualStyleBackColor = true;
             btnPacientes.Click += btnPacientes_Click;
             // 
@@ -305,24 +332,14 @@
             pnlContenedor.Size = new Size(1186, 729);
             pnlContenedor.TabIndex = 2;
             // 
-            // btnCitasProgramadas
+            // panel6
             // 
-            btnCitasProgramadas.Cursor = Cursors.Hand;
-            btnCitasProgramadas.FlatAppearance.BorderSize = 0;
-            btnCitasProgramadas.FlatAppearance.MouseOverBackColor = Color.LightSeaGreen;
-            btnCitasProgramadas.FlatStyle = FlatStyle.Flat;
-            btnCitasProgramadas.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCitasProgramadas.ForeColor = SystemColors.ControlLightLight;
-            btnCitasProgramadas.Image = (Image)resources.GetObject("btnCitasProgramadas.Image");
-            btnCitasProgramadas.ImageAlign = ContentAlignment.MiddleRight;
-            btnCitasProgramadas.Location = new Point(-2, 451);
-            btnCitasProgramadas.Margin = new Padding(2, 1, 2, 1);
-            btnCitasProgramadas.Name = "btnCitasProgramadas";
-            btnCitasProgramadas.Size = new Size(200, 46);
-            btnCitasProgramadas.TabIndex = 9;
-            btnCitasProgramadas.Text = "CITAS PROGRAMADAS";
-            btnCitasProgramadas.UseVisualStyleBackColor = true;
-            btnCitasProgramadas.Click += btnCitasProgramadas_Click;
+            panel6.BackColor = Color.FromArgb(124, 175, 32);
+            panel6.Location = new Point(0, 451);
+            panel6.Margin = new Padding(2, 1, 2, 1);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(11, 46);
+            panel6.TabIndex = 6;
             // 
             // frmCentral
             // 
@@ -368,5 +385,6 @@
         private Button btnIngresos;
         private Panel panel5;
         private Button btnCitasProgramadas;
+        private Panel panel6;
     }
 }

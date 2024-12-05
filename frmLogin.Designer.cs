@@ -181,18 +181,20 @@
             // 
             txtUsername.BackColor = SystemColors.ControlLightLight;
             txtUsername.BorderStyle = BorderStyle.None;
-            txtUsername.Location = new Point(504, 175);
+            txtUsername.Font = new Font("Segoe UI", 15F);
+            txtUsername.Location = new Point(504, 160);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(254, 16);
+            txtUsername.Size = new Size(254, 27);
             txtUsername.TabIndex = 12;
             // 
             // txtPassword
             // 
             txtPassword.BackColor = SystemColors.ControlLightLight;
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Location = new Point(504, 270);
+            txtPassword.Font = new Font("Segoe UI", 15F);
+            txtPassword.Location = new Point(504, 255);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(254, 16);
+            txtPassword.Size = new Size(254, 27);
             txtPassword.TabIndex = 13;
             // 
             // frmLogin
